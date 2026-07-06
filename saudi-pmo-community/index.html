@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مجتمع مكاتب إدارة المشاريع السعودي — Saudi PMO Community</title>
+<meta name="description" content="مجتمع مستقل لمحترفي مكاتب إدارة المشاريع في السعودية. An independent community for PMO and project-delivery professionals in Saudi Arabia — rooted in Najdi heritage, built for Vision 2030.">
+<meta name="theme-color" content="#1E3329">
+<meta property="og:title" content="Saudi PMO Community — مجتمع مكاتب إدارة المشاريع السعودي">
+<meta property="og:description" content="Where Saudi Arabia's project leaders build together. حيث يجتمع قادة المشاريع في السعودية ليبنوا معًا.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero-heritage.png">
+<link rel="icon" type="image/png" href="assets/t-icon-green.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@200;300;400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2B4A3A; --green-deep:#1E3329; --green-soft:#3A5A48; --green-line:#345444;
+  --gold:#C49A60; --gold-deep:#A87E47; --sand:#D8B98A;
+  --cream:#F1EADB; --paper:#FBF8F1; --paper-2:#F5EFE3;
+  --ink:#1B1B18; --ink-soft:#4A4A44;
+  --line:rgba(43,74,58,.14);
+  --line-d:rgba(241,234,219,.16);
+  --maxw:1180px;
+  --sans:'Alexandria',-apple-system,'Segoe UI',sans-serif;
+  --ar:'Tajawal',sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans); background:var(--paper); color:var(--ink);
+  line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  font-weight:300; letter-spacing:.005em;
+}
+html[dir="rtl"] body{font-family:var(--ar); letter-spacing:0}
+html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] .brand-word{font-family:var(--ar)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-weight:600;line-height:1.08;letter-spacing:-.02em}
+section{position:relative;scroll-margin-top:76px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+.eyebrow{
+  font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold-deep);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;
+}
+html[dir="rtl"] .eyebrow{letter-spacing:.08em}
+.eyebrow::before{content:"";width:26px;height:1.5px;background:var(--gold)}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:500;
+  font-size:.9rem;padding:15px 30px;border-radius:100px;cursor:pointer;border:1.5px solid transparent;
+  transition:.4s var(--ease);letter-spacing:.01em;white-space:nowrap;
+}
+html[dir="rtl"] .btn{font-family:var(--ar)}
+.btn-gold{background:var(--gold);color:var(--green-deep)}
+.btn-gold:hover{background:var(--green-deep);color:var(--cream);transform:translateY(-2px)}
+.btn-ghost{border-color:currentColor;color:var(--cream)}
+.btn-ghost:hover{background:var(--cream);color:var(--green-deep);border-color:var(--cream)}
+.btn-outline{border-color:var(--green);color:var(--green)}
+.btn-outline:hover{background:var(--green);color:var(--cream)}
+.btn svg{width:15px;height:15px}
+html[dir="rtl"] .btn .arr{transform:scaleX(-1)}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 32px;transition:.45s var(--ease);
+}
+.nav.scrolled{
+  background:rgba(251,248,241,.82);backdrop-filter:blur(16px);
+  padding:12px 32px;box-shadow:0 1px 0 var(--line);
+}
+.brand{display:flex;align-items:center;gap:13px;cursor:pointer}
+.brand img{height:54px;width:auto;display:block;transition:height .45s var(--ease)}
+.nav.scrolled .brand img{height:44px}
+.brand-word{
+  font-weight:600;font-size:1.02rem;line-height:1;color:var(--cream);letter-spacing:-.01em;
+}
+.brand-word b{font-weight:700}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a.lnk{
+  font-size:.86rem;font-weight:400;color:var(--cream);padding:9px 15px;border-radius:100px;
+  transition:.3s var(--ease);position:relative;opacity:.85;
+}
+.nav.scrolled .nav-links a.lnk{color:var(--ink-soft)}
+.nav-links a.lnk:hover{opacity:1;background:rgba(196,154,96,.16)}
+.nav-links a.lnk.active{opacity:1;color:var(--gold)}
+.nav.scrolled .nav-links a.lnk.active{color:var(--gold-deep)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-toggle{
+  font-family:var(--sans);font-weight:600;font-size:.78rem;letter-spacing:.05em;
+  background:transparent;border:1.5px solid rgba(241,234,219,.4);color:var(--cream);
+  padding:8px 15px;border-radius:100px;cursor:pointer;transition:.3s var(--ease);
+}
+.nav.scrolled .lang-toggle{border-color:var(--line);color:var(--green)}
+.lang-toggle:hover{background:var(--gold);border-color:var(--gold);color:var(--green-deep)}
+.nav .btn{font-size:.82rem;padding:11px 22px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.burger span{width:24px;height:2px;background:var(--cream);transition:.3s}
+.nav.scrolled .burger span{background:var(--green-deep)}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  min-height:100vh;background:var(--green-deep);color:var(--cream);
+  display:flex;align-items:center;overflow:hidden;padding:130px 0 70px;
+}
+#net{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
+.hero::before{ /* triangle band bottom */
+  content:"";position:absolute;left:0;right:0;bottom:0;height:70px;pointer-events:none;
+  background:var(--tri-gold);background-size:34px 70px;opacity:.5;
+}
+.hero-glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.g1{width:520px;height:520px;background:rgba(196,154,96,.22);top:-140px;right:-120px}
+.g2{width:460px;height:460px;background:rgba(58,90,72,.55);bottom:-160px;left:-140px}
+.hero .wrap{position:relative;z-index:3;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero-eyebrow{color:var(--sand)}
+.hero-eyebrow::before{background:var(--sand)}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.6rem);font-weight:600;margin:6px 0 26px;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--gold);position:relative}
+.hero p.lead{font-size:clamp(1.02rem,1.5vw,1.22rem);max-width:36ch;color:rgba(241,234,219,.82);font-weight:300;margin-bottom:38px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-badges{display:flex;gap:26px;margin-top:46px;flex-wrap:wrap}
+.hero-badge b{display:block;font-size:1.7rem;font-weight:700;color:var(--cream);line-height:1}
+.hero-badge span{font-size:.76rem;letter-spacing:.06em;color:var(--sand);opacity:.85}
+.hero-logo{display:flex;justify-content:center;align-items:center}
+.hero-logo .lock{
+  width:100%;max-width:320px;aspect-ratio:1/1.4;
+  background:url(assets/t-logo-h-offwhite.png) center/contain no-repeat;
+  filter:drop-shadow(0 20px 50px rgba(0,0,0,.35));animation:float 7s var(--ease) infinite;
+}
+html[dir="rtl"] .hero-logo .lock{background-image:url(assets/hero-ar-offwhite.png)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.scroll-cue{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;
+  font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sand);
+  display:flex;flex-direction:column;align-items:center;gap:9px;opacity:.75;
+}
+.scroll-cue .mouse{width:22px;height:34px;border:1.5px solid var(--sand);border-radius:12px;position:relative}
+.scroll-cue .mouse::after{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:3px;height:6px;border-radius:2px;background:var(--gold);animation:wheel 1.6s infinite}
+@keyframes wheel{0%{opacity:0;top:6px}40%{opacity:1}80%{opacity:0;top:16px}}
+
+/* ---------- MARQUEE ---------- */
+.strip{background:var(--green);color:var(--cream);padding:16px 0;overflow:hidden;border-top:1px solid var(--green-line)}
+.marquee{display:flex;gap:60px;white-space:nowrap;width:max-content;animation:scrollx 32s linear infinite}
+.marquee span{font-size:.9rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);display:inline-flex;align-items:center;gap:60px;font-weight:400}
+.marquee span::after{content:"◈";color:var(--gold);font-size:.7rem}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+
+/* ---------- SECTION SCAFFOLD ---------- */
+.sec{padding:120px 0}
+.sec-head{max-width:640px;margin-bottom:60px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,3.6vw,3.1rem);color:var(--green-deep);margin-bottom:20px}
+.sec-head p{font-size:1.08rem;color:var(--ink-soft);font-weight:300}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:.9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
+
+/* ---------- ABOUT ---------- */
+.about{background:var(--paper)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-txt p{color:var(--ink-soft);font-size:1.06rem;margin-bottom:20px;font-weight:300}
+.about-txt .lead-line{font-size:1.35rem;color:var(--green);font-weight:400;line-height:1.5;margin-bottom:26px}
+.about-media{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 70px -30px rgba(43,74,58,.5)}
+.about-media img{width:100%;height:100%;object-fit:cover}
+.about-media .cap{
+  position:absolute;left:20px;bottom:20px;right:20px;color:var(--cream);
+  background:linear-gradient(transparent,rgba(30,51,41,.85));padding:40px 22px 20px;margin:-40px -22px -20px;
+  font-size:.86rem;letter-spacing:.02em;
+}
+.about-media .cap b{display:block;font-weight:600;margin-bottom:2px;font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{font-size:.8rem;padding:8px 16px;border:1px solid var(--line);border-radius:100px;color:var(--green);background:var(--paper-2)}
+
+/* ---------- PILLARS ---------- */
+.pillars{background:var(--cream)}
+.pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.pillar{
+  background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:34px 28px;
+  transition:.45s var(--ease);position:relative;overflow:hidden;
+}
+.pillar::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--gold);transition:.5s var(--ease)}
+.pillar:hover{transform:translateY(-8px);box-shadow:0 26px 50px -26px rgba(43,74,58,.45);border-color:transparent}
+.pillar:hover::before{width:100%}
+.pillar .ic{
+  width:56px;height:56px;border-radius:14px;background:var(--green-deep);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:.45s var(--ease);
+}
+.pillar:hover .ic{background:var(--gold);color:var(--green-deep);transform:rotate(-6deg)}
+.pillar .ic svg{width:26px;height:26px}
+.pillar h3{font-size:1.28rem;color:var(--green-deep);margin-bottom:12px;font-weight:600}
+.pillar p{font-size:.93rem;color:var(--ink-soft);font-weight:300}
+.pillar .num{position:absolute;top:26px;right:26px;font-size:.8rem;color:var(--gold-deep);font-weight:600;opacity:.6}
+html[dir="rtl"] .pillar .num{right:auto;left:26px}
+
+/* ---------- NETWORK FEATURE ---------- */
+.network{background:var(--green-deep);color:var(--cream);overflow:hidden}
+.network .bg{position:absolute;inset:0}
+.network .bg img{width:100%;height:100%;object-fit:cover;opacity:.34}
+.network .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--green-deep) 30%,rgba(30,51,41,.55))}
+.network .wrap{position:relative;z-index:2}
+.network .inner{max-width:620px;padding:40px 0}
+.network h2{font-size:clamp(2rem,4vw,3.3rem);margin-bottom:22px}
+.network h2 em{font-style:normal;color:var(--gold)}
+.network p{font-size:1.12rem;color:rgba(241,234,219,.82);font-weight:300;margin-bottom:20px}
+.thread-stats{display:flex;gap:44px;margin-top:40px;flex-wrap:wrap}
+.thread-stats div b{display:block;font-size:2.3rem;font-weight:700;color:var(--gold);line-height:1}
+.thread-stats div span{font-size:.82rem;color:var(--sand);letter-spacing:.05em}
+
+/* ---------- PROGRAMS ---------- */
+.programs{background:var(--paper)}
+.prog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.prog{
+  display:flex;gap:22px;padding:30px;border-radius:18px;background:var(--paper-2);
+  border:1px solid var(--line);transition:.4s var(--ease);align-items:flex-start;
+}
+.prog:hover{background:var(--green-deep);border-color:var(--green-deep);transform:translateY(-4px)}
+.prog:hover h3,.prog:hover p{color:var(--cream)}
+.prog:hover .pic{background:var(--gold);color:var(--green-deep)}
+.prog .pic{
+  width:52px;height:52px;flex:none;border-radius:13px;background:var(--cream);color:var(--green);
+  display:flex;align-items:center;justify-content:center;transition:.4s var(--ease);
+}
+.prog .pic svg{width:24px;height:24px}
+.prog h3{font-size:1.16rem;color:var(--green-deep);margin-bottom:7px;transition:.4s;font-weight:600}
+.prog p{font-size:.92rem;color:var(--ink-soft);font-weight:300;transition:.4s}
+.prog .tag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:8px;display:block}
+
+/* ---------- FOUNDERS ---------- */
+.founders{background:var(--cream)}
+.f-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.founder{
+  background:var(--paper);border-radius:20px;overflow:hidden;border:1px solid var(--line);
+  transition:.45s var(--ease);position:relative;
+}
+.founder:hover{transform:translateY(-6px);box-shadow:0 30px 55px -28px rgba(43,74,58,.5)}
+.founder .ph{aspect-ratio:1/1;overflow:hidden;position:relative;background:var(--green-soft)}
+.founder .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15);transition:.6s var(--ease)}
+.founder:hover .ph img{filter:grayscale(0);transform:scale(1.05)}
+.founder .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(30,51,41,.28))}
+.founder .meta{padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.founder .meta .nm{font-weight:600;color:var(--green-deep);font-size:1.05rem;line-height:1.25}
+.founder .meta .nm small{display:block;font-weight:300;color:var(--ink-soft);font-size:.8rem;margin-top:3px;font-family:var(--ar)}
+.founder .meta .role{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;text-align:right;flex:none}
+.founder .seal-badge{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:9px;background:rgba(30,51,41,.55);backdrop-filter:blur(4px);overflow:hidden;opacity:0;transition:.45s}
+.founder .seal-badge::after{content:"";position:absolute;inset:0;background:url(assets/t-icon-offwhite.png) center/64% no-repeat}
+.founder:hover .seal-badge{opacity:1}
+
+/* ---------- VALUES ---------- */
+.values{background:var(--green);color:var(--cream);padding:80px 0}
+.val-row{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:center}
+.val-item{text-align:center;flex:1;min-width:150px}
+.val-item b{display:block;font-size:1.6rem;font-weight:600;color:var(--gold);margin-bottom:6px}
+.val-item span{font-size:.86rem;color:var(--sand);font-weight:300}
+
+/* ---------- JOIN ---------- */
+.join{background:var(--paper);padding:120px 0}
+.join-card{
+  background:var(--green-deep);border-radius:30px;padding:64px;color:var(--cream);position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;
+}
+.join-card::before{content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;background:rgba(196,154,96,.16);filter:blur(60px)}
+.join-card .tri{position:absolute;left:0;bottom:0;right:0;height:46px;background:var(--tri-gold);background-size:26px 46px;opacity:.4}
+.join-txt{position:relative;z-index:2}
+.join-txt h2{font-size:clamp(1.9rem,3.4vw,2.8rem);margin-bottom:18px}
+.join-txt h2 em{font-style:normal;color:var(--gold)}
+.join-txt p{color:rgba(241,234,219,.8);font-weight:300;font-size:1.05rem;max-width:40ch}
+.form{position:relative;z-index:2;display:grid;gap:14px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form input,.form select{
+  font-family:inherit;font-size:.92rem;padding:15px 18px;border-radius:12px;border:1.5px solid rgba(241,234,219,.22);
+  background:rgba(241,234,219,.06);color:var(--cream);transition:.3s;width:100%;
+}
+.form input::placeholder{color:rgba(241,234,219,.5)}
+.form input:focus,.form select:focus{outline:none;border-color:var(--gold);background:rgba(241,234,219,.1)}
+.form select{color:rgba(241,234,219,.6)}
+.form select option{color:var(--ink)}
+.form .btn{justify-content:center;margin-top:6px}
+.form .note{font-size:.76rem;color:var(--sand);opacity:.7;text-align:center}
+.form-ok{display:none;text-align:center;padding:20px;border-radius:14px;background:rgba(196,154,96,.14);border:1px solid rgba(196,154,96,.35)}
+.form-ok.show{display:block}
+.form-ok b{color:var(--gold);display:block;margin-bottom:4px}
+
+/* ---------- FOOTER ---------- */
+.footer{background:var(--green-deep);color:var(--cream);padding:70px 0 30px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid var(--line-d)}
+.foot-brand .seal{width:52px;height:52px;border-radius:13px;background:var(--green);position:relative;overflow:hidden;margin-bottom:18px}
+.foot-brand .seal::after{content:"";position:absolute;inset:0;background:url(assets/t-icon-offwhite.png) center/68% no-repeat}
+.foot-brand p{color:rgba(241,234,219,.7);font-weight:300;font-size:.92rem;max-width:30ch}
+.foot-col h4{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:600}
+.foot-col a{display:block;color:rgba(241,234,219,.75);font-size:.9rem;padding:6px 0;font-weight:300;transition:.25s}
+.foot-col a:hover{color:var(--gold);padding-left:5px}
+html[dir="rtl"] .foot-col a:hover{padding-left:0;padding-right:5px}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;flex-wrap:wrap;gap:14px}
+.foot-bottom p{font-size:.8rem;color:rgba(241,234,219,.55);font-weight:300}
+.socials{display:flex;gap:10px}
+.socials a{width:38px;height:38px;border:1px solid var(--line-d);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.3s}
+.socials a:hover{background:var(--gold);border-color:var(--gold);color:var(--green-deep)}
+.socials svg{width:16px;height:16px}
+
+/* ---------- THEME TOGGLE BUTTON ---------- */
+.theme-toggle{
+  width:38px;height:38px;border-radius:50%;flex:none;padding:0;
+  border:1.5px solid rgba(241,234,219,.4);background:transparent;color:var(--cream);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.3s var(--ease);
+}
+.nav.scrolled .theme-toggle{border-color:var(--line);color:var(--green)}
+.theme-toggle:hover{background:var(--gold);border-color:var(--gold);color:var(--green-deep)}
+.theme-toggle svg{width:17px;height:17px}
+.theme-toggle .sun{display:none}
+html.night .theme-toggle .sun{display:block}
+html.night .theme-toggle .moon{display:none}
+
+/* ---------- NIGHT MODE ---------- */
+body,.about,.pillars,.programs,.founders,.join{transition:background-color .5s var(--ease)}
+html.night body{background:#131f18;color:#e9e4d8}
+html.night .about,html.night .programs,html.night .join{background:#131f18}
+html.night .pillars,html.night .founders{background:#0f1a13}
+html.night .sec-head h2{color:#f1eadb}
+html.night .sec-head p{color:#bdb7a6}
+html.night .about-txt .lead-line{color:#d8b98a}
+html.night .about-txt p{color:#bdb7a6}
+html.night .about-txt h2{color:#f1eadb!important}
+html.night .chip{background:#1c2c23;border-color:rgba(241,234,219,.14);color:#d8b98a}
+html.night .pillar{background:#1c2c23;border-color:rgba(241,234,219,.1)}
+html.night .pillar h3{color:#f1eadb}
+html.night .pillar p{color:#b3ac9b}
+html.night .prog{background:#1c2c23;border-color:rgba(241,234,219,.1)}
+html.night .prog:hover{background:var(--green-deep)}
+html.night .prog h3{color:#f1eadb}
+html.night .prog p{color:#b3ac9b}
+html.night .prog .pic{background:#2b4a3a;color:#d8b98a}
+html.night .founder{background:#1c2c23;border-color:rgba(241,234,219,.1)}
+html.night .founder .meta .nm{color:#f1eadb}
+html.night .founder .meta .nm small{color:#b3ac9b}
+html.night .btn-outline{border-color:#d8b98a;color:#d8b98a}
+html.night .nav.scrolled{background:rgba(19,31,24,.86);box-shadow:0 1px 0 rgba(241,234,219,.12)}
+html.night .nav.scrolled .nav-links a.lnk{color:#d9d3c2}
+html.night .nav.scrolled .nav-links a.lnk.active{color:var(--gold)}
+html.night .nav.scrolled .lang-toggle{border-color:rgba(241,234,219,.35);color:#f1eadb}
+html.night .nav.scrolled .theme-toggle{border-color:rgba(241,234,219,.35);color:var(--cream)}
+html.night .nav.scrolled .burger span{background:#f1eadb}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:940px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav .btn.desk{display:none}
+  .hero .wrap{grid-template-columns:1fr;text-align:center}
+  .hero-logo{order:-1;margin-bottom:10px}
+  .hero-logo .lock{max-width:230px}
+  .hero-eyebrow{justify-content:center}
+  .hero-cta,.hero-badges{justify-content:center}
+  .hero p.lead{margin-left:auto;margin-right:auto}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .pillar-grid{grid-template-columns:repeat(2,1fr)}
+  .prog-grid{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:repeat(2,1fr)}
+  .join-card{grid-template-columns:1fr;gap:38px;padding:44px 30px}
+  .foot-top{grid-template-columns:1fr 1fr;gap:32px}
+  /* mobile menu */
+  .nav-links.open{
+    display:flex;position:fixed;inset:0;top:0;background:var(--green-deep);
+    flex-direction:column;justify-content:center;gap:8px;z-index:99;
+  }
+  .nav-links.open a.lnk{color:var(--cream);font-size:1.3rem;padding:14px}
+}
+@media(max-width:560px){
+  .wrap{padding:0 20px}
+  .sec{padding:80px 0}
+  .pillar-grid,.f-grid{grid-template-columns:1fr}
+  .form .row{grid-template-columns:1fr}
+  .hero-badges{gap:20px}
+  .foot-top{grid-template-columns:1fr}
+  .val-row{gap:22px}
+  .val-item{min-width:120px}
+  .nav{padding:14px 16px}
+  .nav.scrolled{padding:10px 16px}
+  .brand img{height:38px}
+  .nav.scrolled .brand img{height:34px}
+  .nav-right{gap:8px}
+  .lang-toggle{padding:7px 11px;font-size:.72rem}
+  .theme-toggle{width:34px;height:34px}
+  .theme-toggle svg{width:15px;height:15px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="brand" onclick="scrollTo({top:0,behavior:'smooth'})">
+    <img id="brandLogo" src="assets/nav-en-offwhite.png" alt="Saudi PMO Community">
+  </div>
+  <div class="nav-links" id="navlinks">
+    <a class="lnk" href="#about" data-en="About" data-ar="من نحن">About</a>
+    <a class="lnk" href="#pillars" data-en="What we do" data-ar="ما نقدّمه">What we do</a>
+    <a class="lnk" href="#network" data-en="The network" data-ar="الشبكة">The network</a>
+    <a class="lnk" href="#programs" data-en="Programs" data-ar="البرامج">Programs</a>
+    <a class="lnk" href="#founders" data-en="Founders" data-ar="المؤسّسون">Founders</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle day / night mode" title="Day / Night">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <button class="lang-toggle" id="lang" onclick="toggleLang()">العربية</button>
+    <a href="#join" class="btn btn-gold desk" data-en="Join us" data-ar="انضم إلينا">Join us</a>
+    <button class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <canvas id="net"></canvas>
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow hero-eyebrow" data-en="Saudi PMO Community · Est. 2025" data-ar="مجتمع مكاتب إدارة المشاريع السعودي · تأسّس 2025">Saudi PMO Community · Est. 2025</span>
+      <h1 data-en="Where Saudi Arabia's project leaders <em>build together.</em>" data-ar="حيث يجتمع قادة المشاريع في السعودية <em>ليبنوا معًا.</em>">Where Saudi Arabia's project leaders <em>build together.</em></h1>
+      <p class="lead" data-en="An independent home for PMO and project-delivery professionals — rooted in Najdi heritage, built for the ambition of Vision 2030." data-ar="بيتٌ مستقل لمحترفي مكاتب إدارة المشاريع وتسليم المشاريع — متجذّر في تراث نجد، ومبنيّ على طموح رؤية 2030.">An independent home for PMO and project-delivery professionals — rooted in Najdi heritage, built for the ambition of Vision 2030.</p>
+      <div class="hero-cta">
+        <a href="#join" class="btn btn-gold" data-en="Join the community" data-ar="انضم إلى المجتمع">Join the community <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#about" class="btn btn-ghost" data-en="Discover the story" data-ar="اكتشف القصة">Discover the story</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge"><b class="count" data-target="1200" data-suffix="+">0</b><span data-en="Members" data-ar="عضو">Members</span></div>
+        <div class="hero-badge"><b class="count" data-target="8" data-suffix="">0</b><span data-en="Sectors" data-ar="قطاعات">Sectors</span></div>
+        <div class="hero-badge"><b class="count" data-target="40" data-suffix="+">0</b><span data-en="Events hosted" data-ar="فعالية">Events hosted</span></div>
+        <div class="hero-badge"><b class="count" data-target="9" data-suffix="">0</b><span data-en="Founders" data-ar="مؤسّسون">Founders</span></div>
+      </div>
+    </div>
+    <div class="hero-logo"><div class="lock"></div></div>
+  </div>
+  <div class="scroll-cue"><div class="mouse"></div><span data-en="Scroll" data-ar="اسحب">Scroll</span></div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="strip">
+  <div class="marquee" id="marq">
+    <span data-en="Giga-Projects" data-ar="المشاريع العملاقة">Giga-Projects</span>
+    <span data-en="Government PMOs" data-ar="مكاتب المشاريع الحكومية">Government PMOs</span>
+    <span data-en="Infrastructure" data-ar="البنية التحتية">Infrastructure</span>
+    <span data-en="Real Estate" data-ar="التطوير العقاري">Real Estate</span>
+    <span data-en="Energy" data-ar="الطاقة">Energy</span>
+    <span data-en="Portfolio Governance" data-ar="حوكمة المحافظ">Portfolio Governance</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-txt">
+      <span class="eyebrow rv" data-en="Who we are" data-ar="من نحن">Who we are</span>
+      <h2 class="rv d1" style="font-size:clamp(2rem,3.6vw,3.1rem);color:var(--green-deep);margin-bottom:22px" data-en="Rooted in Najd. Built for delivery." data-ar="متجذّرون في نجد. مبنيّون للتسليم.">Rooted in Najd. Built for delivery.</h2>
+      <p class="lead-line rv d1" data-en="We bring together the people who plan, govern, and deliver the Kingdom's most ambitious projects." data-ar="نجمع الأشخاص الذين يخطّطون ويحوكمون ويسلّمون أكثر مشاريع المملكة طموحًا.">We bring together the people who plan, govern, and deliver the Kingdom's most ambitious projects.</p>
+      <p class="rv d2" data-en="The Saudi PMO Community is an independent, practitioner-led network for project, program, and portfolio management professionals. We exist to raise the standard of delivery — sharing knowledge, opening doors, and building the relationships that get hard projects done." data-ar="مجتمع مكاتب إدارة المشاريع السعودي شبكة مستقلة يقودها الممارسون لمحترفي إدارة المشاريع والبرامج والمحافظ. نوجد لرفع مستوى التسليم — بمشاركة المعرفة، وفتح الأبواب، وبناء العلاقات التي تُنجز المشاريع الصعبة.">The Saudi PMO Community is an independent, practitioner-led network for project, program, and portfolio management professionals. We exist to raise the standard of delivery — sharing knowledge, opening doors, and building the relationships that get hard projects done.</p>
+      <p class="rv d3" data-en="Our seal is drawn like the carved motifs of Najdi mud-brick homes — a mark of craft, order, and belonging. It reminds us that the future is always built on foundations." data-ar="خاتَمنا مرسومٌ على هيئة النقوش المحفورة في بيوت الطين النجدية — علامة الإتقان والنظام والانتماء. يذكّرنا بأن المستقبل يُبنى دائمًا على أساس.">Our seal is drawn like the carved motifs of Najdi mud-brick homes — a mark of craft, order, and belonging. It reminds us that the future is always built on foundations.</p>
+      <div class="chips rv d3">
+        <span class="chip" data-en="Independent" data-ar="مستقل">Independent</span>
+        <span class="chip" data-en="Practitioner-led" data-ar="يقوده الممارسون">Practitioner-led</span>
+        <span class="chip" data-en="Non-profit" data-ar="غير ربحي">Non-profit</span>
+        <span class="chip" data-en="Kingdom-wide" data-ar="على مستوى المملكة">Kingdom-wide</span>
+      </div>
+    </div>
+    <div class="about-media rv d2">
+      <img loading="lazy" src="assets/hero-heritage.png" alt="Najdi heritage architecture with the PMOS seal">
+      <div class="cap"><b data-en="At-Turaif, Diriyah" data-ar="الطريف، الدرعية">At-Turaif, Diriyah</b><span data-en="Our visual language borrows from Najdi mud-brick craft." data-ar="لغتنا البصرية مستلهمة من حرفة الطين النجدية.">Our visual language borrows from Najdi mud-brick craft.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PILLARS ============ -->
+<section class="sec pillars" id="pillars">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow" style="justify-content:center" data-en="What we do" data-ar="ما نقدّمه">What we do</span>
+      <h2 data-en="Four ways we build the community." data-ar="أربع طرقٍ نبني بها المجتمع.">Four ways we build the community.</h2>
+      <p data-en="Like a Najdi wall, the community rises brick by brick — each layer supporting the next." data-ar="كالجدار النجدي، يرتفع المجتمع لبنةً لبنة — كل طبقةٍ تسند التي تليها.">Like a Najdi wall, the community rises brick by brick — each layer supporting the next.</p>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar rv d1">
+        <span class="num">01</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7.5 7.8 11 15M16.5 7.8 13 15M8 6h8"/></svg></div>
+        <h3 data-en="Connect" data-ar="نتواصل">Connect</h3>
+        <p data-en="Meet peers across giga-projects, government, and the private sector — the people behind the Kingdom's delivery." data-ar="التقِ بالأقران عبر المشاريع العملاقة والجهات الحكومية والقطاع الخاص — صنّاع التسليم في المملكة.">Meet peers across giga-projects, government, and the private sector — the people behind the Kingdom's delivery.</p>
+      </div>
+      <div class="pillar rv d2">
+        <span class="num">02</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H12v16H5.5A2.5 2.5 0 0 0 3 21.5zM21 5.5A2.5 2.5 0 0 0 18.5 3H12v16h6.5A2.5 2.5 0 0 1 21 21.5z"/></svg></div>
+        <h3 data-en="Learn" data-ar="نتعلّم">Learn</h3>
+        <p data-en="Masterclasses, playbooks, and honest case studies from live PMOs — practical knowledge you can use on Monday." data-ar="ورش الخبراء، والأدلة العملية، ودراسات حالة صادقة من مكاتب مشاريع فعلية — معرفة تطبّقها فورًا.">Masterclasses, playbooks, and honest case studies from live PMOs — practical knowledge you can use on Monday.</p>
+      </div>
+      <div class="pillar rv d3">
+        <span class="num">03</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3 data-en="Grow" data-ar="ننمو">Grow</h3>
+        <p data-en="Mentorship circles and certification pathways that move careers — and the profession — forward." data-ar="حلقات إرشاد ومسارات احترافية تدفع بالمسيرة المهنية — والمهنة نفسها — إلى الأمام.">Mentorship circles and certification pathways that move careers — and the profession — forward.</p>
+      </div>
+      <div class="pillar rv d4">
+        <span class="num">04</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 3 7l9 5 9-5-9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></svg></div>
+        <h3 data-en="Deliver" data-ar="ننجز">Deliver</h3>
+        <p data-en="Shared standards, tools, and language that raise the bar for delivery across the whole Kingdom." data-ar="معايير وأدوات ولغة مشتركة ترفع سقف التسليم في عموم المملكة.">Shared standards, tools, and language that raise the bar for delivery across the whole Kingdom.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NETWORK ============ -->
+<section class="sec network" id="network">
+  <div class="bg"><img loading="lazy" src="assets/scene-network.png" alt="Community network"></div>
+  <div class="wrap">
+    <div class="inner">
+      <span class="eyebrow rv" style="color:var(--sand)" data-en="The fabric" data-ar="النسيج">The fabric</span>
+      <h2 class="rv d1" data-en="A network, <em>not a directory.</em>" data-ar="شبكةٌ، <em>لا مجرّد دليل.</em>">A network, <em>not a directory.</em></h2>
+      <p class="rv d2" data-en="Every member is a thread. On their own, a name and a number. Together, we weave the fabric that carries knowledge, trust, and opportunity across the Kingdom." data-ar="كل عضوٍ خيط. وحده مجرّد اسمٍ ورقم. ومعًا ننسج النسيج الذي يحمل المعرفة والثقة والفرص عبر المملكة.">Every member is a thread. On their own, a name and a number. Together, we weave the fabric that carries knowledge, trust, and opportunity across the Kingdom.</p>
+      <div class="thread-stats rv d3">
+        <div><b>1 <span style="font-size:1.1rem">+</span></b><span data-en="group chat that started it all" data-ar="محادثة واحدة بدأت كل شيء">group chat that started it all</span></div>
+        <div><b>13</b><span data-en="cities represented" data-ar="مدينة ممثّلة">cities represented</span></div>
+        <div><b>∞</b><span data-en="connections still forming" data-ar="روابط لا تتوقف">connections still forming</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMS ============ -->
+<section class="sec programs" id="programs">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-en="Programs & rhythm" data-ar="البرامج والإيقاع">Programs &amp; rhythm</span>
+      <h2 data-en="What being a member feels like." data-ar="كيف تبدو العضوية.">What being a member feels like.</h2>
+      <p data-en="A steady rhythm of gatherings, learning, and mentorship — in person and online, in Arabic and English." data-ar="إيقاعٌ منتظم من اللقاءات والتعلّم والإرشاد — حضوريًا وعن بُعد، بالعربية والإنجليزية.">A steady rhythm of gatherings, learning, and mentorship — in person and online, in Arabic and English.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog rv d1">
+        <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg></div>
+        <div><span class="tag" data-en="Monthly" data-ar="شهريًا">Monthly</span><h3 data-en="Majlis Meetups" data-ar="لقاءات المجلس">Majlis Meetups</h3><p data-en="Informal evenings where members swap war stories over qahwa and dates." data-ar="أمسياتٌ ودّية يتبادل فيها الأعضاء تجاربهم على القهوة والتمر.">Informal evenings where members swap war stories over qahwa and dates.</p></div>
+      </div>
+      <div class="prog rv d2">
+        <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></div>
+        <div><span class="tag" data-en="Bi-weekly" data-ar="كل أسبوعين">Bi-weekly</span><h3 data-en="Masterclasses" data-ar="ورش الخبراء">Masterclasses</h3><p data-en="Deep-dive sessions led by practitioners running the Kingdom's biggest PMOs." data-ar="جلسات معمّقة يقودها ممارسون يديرون أكبر مكاتب المشاريع في المملكة.">Deep-dive sessions led by practitioners running the Kingdom's biggest PMOs.</p></div>
+      </div>
+      <div class="prog rv d3">
+        <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div><span class="tag" data-en="Ongoing" data-ar="مستمر">Ongoing</span><h3 data-en="Mentorship Circles" data-ar="حلقات الإرشاد">Mentorship Circles</h3><p data-en="Senior leaders paired with rising talent — small groups, real accountability." data-ar="قادة كبار مع مواهب صاعدة — مجموعات صغيرة ومسؤولية حقيقية.">Senior leaders paired with rising talent — small groups, real accountability.</p></div>
+      </div>
+      <div class="prog rv d4">
+        <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg></div>
+        <div><span class="tag" data-en="Annual" data-ar="سنويًا">Annual</span><h3 data-en="The Annual Forum" data-ar="الملتقى السنوي">The Annual Forum</h3><p data-en="The whole community in one room — keynotes, awards, and the year's best thinking." data-ar="المجتمع كله في قاعة واحدة — كلمات رئيسية وجوائز وأفضل أفكار العام.">The whole community in one room — keynotes, awards, and the year's best thinking.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUES ============ -->
+<section class="values">
+  <div class="wrap">
+    <div class="val-row">
+      <div class="val-item rv d1"><b data-en="Grounded" data-ar="راسخون">Grounded</b><span data-en="Rooted in heritage & craft" data-ar="متجذّرون في التراث والإتقان">Rooted in heritage &amp; craft</span></div>
+      <div class="val-item rv d2"><b data-en="Generous" data-ar="كرماء">Generous</b><span data-en="We share, we open doors" data-ar="نشارك ونفتح الأبواب">We share, we open doors</span></div>
+      <div class="val-item rv d3"><b data-en="Ambitious" data-ar="طموحون">Ambitious</b><span data-en="Built for Vision 2030" data-ar="مبنيّون لرؤية 2030">Built for Vision 2030</span></div>
+      <div class="val-item rv d4"><b data-en="Precise" data-ar="دقيقون">Precise</b><span data-en="Delivery is our discipline" data-ar="التسليم هو انضباطنا">Delivery is our discipline</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDERS ============ -->
+<section class="sec founders" id="founders">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow" style="justify-content:center" data-en="The founding circle" data-ar="الدائرة المؤسِّسة">The founding circle</span>
+      <h2 data-en="Nine practitioners. One idea." data-ar="تسعة ممارسين. فكرة واحدة.">Nine practitioners. One idea.</h2>
+      <p data-en="They turned a simple group chat into a movement for the profession. Meet the people who laid the first bricks." data-ar="حوّلوا محادثةً بسيطة إلى حركةٍ للمهنة. تعرّف على من وضعوا اللبنات الأولى.">They turned a simple group chat into a movement for the profession. Meet the people who laid the first bricks.</p>
+    </div>
+    <div class="f-grid">
+      <div class="founder rv d1"><div class="ph"><img loading="lazy" src="assets/founder-milibari.jpeg" alt="Dr. Ali Milibari"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Dr. Ali Milibari<small>د. علي ميليباري</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
+      <div class="founder rv d2"><div class="ph"><img loading="lazy" src="assets/founder-marabi.png" alt="Eng. Ahmed Al-Marabi"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Ahmed Al-Marabi<small>م. أحمد المرعبي</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
+      <div class="founder rv d3"><div class="ph"><img loading="lazy" src="assets/founder-aqqab.jpeg" alt="Eng. Hosam Al-Aqqab"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Hosam Al-Aqqab<small>م. حسام العقاب</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
+      <div class="founder rv d1"><div class="ph"><img loading="lazy" src="assets/founder-yanbawi.jpeg" alt="Eng. Tariq Fouad Yanbawi"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Tariq F. Yanbawi<small>م. طارق فؤاد ينبعاوي</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
+      <div class="founder rv d2"><div class="ph"><img loading="lazy" src="assets/founder-ghamdi.jpeg" alt="Eng. Emad Al-Ghamdi"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Emad Al-Ghamdi<small>م. عماد الغامدي</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
+      <div class="founder rv d3"><div class="ph"><img loading="lazy" src="assets/founder-qazzaz.jpeg" alt="Eng. Amr Qazzaz"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Amr Qazzaz<small>م. عمرو قزاز</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
+      <div class="founder rv d1"><div class="ph"><img loading="lazy" src="assets/founder-ghaith.jpeg" alt="Eng. Majed Ghaith"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Majed Ghaith<small>م. ماجد غيث</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
+      <div class="founder rv d2"><div class="ph"><img loading="lazy" src="assets/founder-zidan.png" alt="Eng. Mahmoud Zidan"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Mahmoud Zidan<small>م. محمود زيدان</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
+      <div class="founder rv d3"><div class="ph"><img loading="lazy" src="assets/founder-maha.png" alt="Eng. Maha Abdulmajeed"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Maha Abdulmajeed<small>م. مها عبدالمجيد</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOIN ============ -->
+<section class="join" id="join">
+  <div class="wrap">
+    <div class="join-card rv">
+      <div class="join-txt">
+        <span class="eyebrow" style="color:var(--sand)" data-en="Become a member" data-ar="كن عضوًا">Become a member</span>
+        <h2 data-en="Build the future of <em>delivery</em> with us." data-ar="لنبنِ مستقبل <em>التسليم</em> معًا.">Build the future of <em>delivery</em> with us.</h2>
+        <p data-en="Membership is free while we grow. Tell us a little about you and we'll welcome you into the circle." data-ar="العضوية مجانية في مرحلة النمو. أخبرنا القليل عنك وسنرحّب بك في الدائرة.">Membership is free while we grow. Tell us a little about you and we'll welcome you into the circle.</p>
+      </div>
+      <form class="form" id="joinForm" onsubmit="return submitJoin(event)">
+        <div class="row">
+          <input type="text" required data-ph-en="Full name" data-ph-ar="الاسم الكامل" placeholder="Full name">
+          <input type="email" required data-ph-en="Email address" data-ph-ar="البريد الإلكتروني" placeholder="Email address">
+        </div>
+        <input type="text" data-ph-en="Organization" data-ph-ar="جهة العمل" placeholder="Organization">
+        <select required>
+          <option value="" disabled selected data-en="Your role" data-ar="دورك المهني">Your role</option>
+          <option data-en="PMO Lead / Director" data-ar="قائد / مدير مكتب مشاريع">PMO Lead / Director</option>
+          <option data-en="Project / Program Manager" data-ar="مدير مشروع / برنامج">Project / Program Manager</option>
+          <option data-en="Portfolio / Governance" data-ar="محافظ / حوكمة">Portfolio / Governance</option>
+          <option data-en="Consultant" data-ar="استشاري">Consultant</option>
+          <option data-en="Student / Early career" data-ar="طالب / بداية مسيرة">Student / Early career</option>
+        </select>
+        <button type="submit" class="btn btn-gold" data-en="Request to join" data-ar="اطلب الانضمام">Request to join</button>
+        <p class="note" data-en="We'll never share your details. One welcome email, that's it." data-ar="لن نشارك بياناتك أبدًا. رسالة ترحيب واحدة، لا أكثر.">We'll never share your details. One welcome email, that's it.</p>
+      </form>
+      <div class="form-ok" id="formOk"><b data-en="Ahlan wa sahlan! 🌿" data-ar="أهلاً وسهلاً! 🌿">Ahlan wa sahlan! 🌿</b><span data-en="Your request is in. Watch your inbox for a welcome from the community." data-ar="وصل طلبك. ترقّب رسالة ترحيب من المجتمع في بريدك.">Your request is in. Watch your inbox for a welcome from the community.</span></div>
+      <div class="tri"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="seal"></div>
+        <div class="brand-word" style="color:var(--cream);margin-bottom:14px">Saudi <b>PMO</b> Community</div>
+        <p data-en="An independent community for project delivery professionals in the Kingdom of Saudi Arabia." data-ar="مجتمع مستقل لمحترفي تسليم المشاريع في المملكة العربية السعودية.">An independent community for project delivery professionals in the Kingdom of Saudi Arabia.</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Explore" data-ar="استكشف">Explore</h4>
+        <a href="#about" data-en="About us" data-ar="من نحن">About us</a>
+        <a href="#pillars" data-en="What we do" data-ar="ما نقدّمه">What we do</a>
+        <a href="#programs" data-en="Programs" data-ar="البرامج">Programs</a>
+        <a href="#founders" data-en="Founders" data-ar="المؤسّسون">Founders</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Community" data-ar="المجتمع">Community</h4>
+        <a href="#join" data-en="Become a member" data-ar="كن عضوًا">Become a member</a>
+        <a href="#" data-en="Code of conduct" data-ar="ميثاق السلوك">Code of conduct</a>
+        <a href="#" data-en="Events calendar" data-ar="أجندة الفعاليات">Events calendar</a>
+        <a href="#" data-en="Brand guidelines" data-ar="الهوية البصرية">Brand guidelines</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Get in touch" data-ar="تواصل معنا">Get in touch</h4>
+        <a href="mailto:hello@saudipmo.community">hello@saudipmo.community</a>
+        <a href="#" data-en="Riyadh, Saudi Arabia" data-ar="الرياض، السعودية">Riyadh, Saudi Arabia</a>
+        <div class="socials" style="margin-top:16px">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.25 8.25h4.5V24h-4.5zM8.25 8.25h4.31v2.15h.06c.6-1.13 2.06-2.32 4.24-2.32 4.53 0 5.37 2.98 5.37 6.86V24h-4.5v-6.16c0-1.47-.03-3.36-2.05-3.36s-2.36 1.6-2.36 3.25V24h-4.5z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5-6.6L5.3 22H2.2l8-9.2L1.5 2h6.9l4.6 6.1zM17.7 20h1.7L7.2 3.8H5.4z"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.24.68-1.4 1.3-1.94 1.34-.5.04-1.13.2-3.8-.8-3.2-1.26-5.2-4.5-5.36-4.7-.15-.2-1.26-1.68-1.26-3.2s.8-2.27 1.08-2.58c.28-.3.6-.38.8-.38l.58.01c.18 0 .44-.07.68.52.24.6.83 2.06.9 2.2.08.16.13.34.02.54-.1.2-.16.34-.32.52l-.48.56c-.16.16-.32.34-.14.66.18.32.8 1.32 1.72 2.14 1.18 1.05 2.18 1.38 2.5 1.54.32.16.5.13.68-.08.18-.2.78-.9.99-1.22.2-.32.4-.26.68-.16.28.1 1.76.84 2.06.99.3.15.5.22.58.34.07.12.07.72-.17 1.4z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p data-en="© 2026 Saudi PMO Community. Built in Riyadh. Brand Guidelines V1.1." data-ar="© 2026 مجتمع مكاتب إدارة المشاريع السعودي. صُنع في الرياض. دليل الهوية V1.1.">© 2026 Saudi PMO Community. Built in Riyadh. Brand Guidelines V1.1.</p>
+      <p data-en="Rooted in Najd · Built for delivery" data-ar="متجذّرون في نجد · مبنيّون للتسليم">Rooted in Najd · Built for delivery</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Najdi triangle pattern (data-uri) ---------- */
+(function(){
+  const tri = c => `url("data:image/svg+xml,${encodeURIComponent(
+    `<svg xmlns='http://www.w3.org/2000/svg' width='34' height='70' viewBox='0 0 34 70'><path d='M0 70 L17 44 L34 70 Z M0 44 L17 18 L34 44' fill='none' stroke='${c}' stroke-width='2'/></svg>`
+  )}")`;
+  document.documentElement.style.setProperty('--tri-gold', tri('#C49A60'));
+})();
+
+/* ---------- NAV scroll state + scrollspy ---------- */
+const nav = document.getElementById('nav');
+const brandLogo = document.getElementById('brandLogo');
+function updateBrand(){
+  const l = document.documentElement.lang === 'ar' ? 'ar' : 'en';
+  const night = document.documentElement.classList.contains('night');
+  const tone = (nav.classList.contains('scrolled') && !night) ? 'green' : 'offwhite';
+  const src = `assets/nav-${l}-${tone}.png`;
+  if(!brandLogo.src.endsWith(src)) brandLogo.src = src;
+  brandLogo.alt = l === 'ar' ? 'مجتمع مكاتب إدارة المشاريع السعودي' : 'Saudi PMO Community';
+}
+const links = [...document.querySelectorAll('.nav-links a.lnk')];
+const secs = links.map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+function onScroll(){
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+  updateBrand();
+  let cur = '';
+  const y = window.scrollY + 140;
+  secs.forEach(s => { if(s.offsetTop <= y) cur = '#' + s.id; });
+  links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === cur));
+}
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+/* ---------- Mobile menu ---------- */
+const navlinks = document.getElementById('navlinks');
+function toggleMenu(){ navlinks.classList.toggle('open'); }
+navlinks.addEventListener('click', e => { if(e.target.tagName === 'A') navlinks.classList.remove('open'); });
+
+/* ---------- Reveal on scroll ---------- */
+const io = new IntersectionObserver((es)=>{
+  es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+}, {threshold:.14});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* ---------- Marquee: duplicate for seamless -50% loop ---------- */
+(function(){ const m = document.getElementById('marq'); if(m) m.innerHTML += m.innerHTML; })();
+
+/* ---------- Count-up ---------- */
+const counters = document.querySelectorAll('.count');
+const cio = new IntersectionObserver((es)=>{
+  es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    const el = e.target, target = +el.dataset.target, suffix = el.dataset.suffix || '';
+    let n = 0; const step = target / 55;
+    const tick = () => { n += step; if(n >= target){ el.textContent = target.toLocaleString() + suffix; }
+      else { el.textContent = Math.floor(n).toLocaleString() + suffix; requestAnimationFrame(tick); } };
+    tick(); cio.unobserve(el);
+  });
+}, {threshold:.5});
+counters.forEach(c => cio.observe(c));
+
+/* ---------- Language toggle (EN <-> AR/RTL) ---------- */
+let lang = 'en';
+function toggleLang(){
+  lang = lang === 'en' ? 'ar' : 'en';
+  const html = document.documentElement;
+  html.lang = lang; html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.getElementById('lang').textContent = lang === 'en' ? 'العربية' : 'English';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    const v = el.dataset[lang]; if(v != null) el.innerHTML = v;
+  });
+  document.querySelectorAll('[data-ph-en]').forEach(el=>{
+    el.placeholder = lang === 'ar' ? el.dataset.phAr : el.dataset.phEn;
+  });
+  updateBrand();
+}
+
+/* ---------- Day / Night mode ---------- */
+function applyTheme(night, persist){
+  document.documentElement.classList.toggle('night', night);
+  if(persist){ try{ localStorage.setItem('spmo-theme', night ? 'night' : 'day'); }catch(e){} }
+  updateBrand();
+}
+function toggleTheme(){
+  applyTheme(!document.documentElement.classList.contains('night'), true);
+}
+(function(){
+  let saved = null;
+  try{ saved = localStorage.getItem('spmo-theme'); }catch(e){}
+  const night = saved ? saved === 'night' : matchMedia('(prefers-color-scheme: dark)').matches;
+  if(night) applyTheme(true, false);
+})();
+
+/* Arabic is the default language — the toggle switches to English */
+toggleLang();
+
+/* ---------- Join form ---------- */
+function submitJoin(e){
+  e.preventDefault();
+  document.getElementById('joinForm').style.display = 'none';
+  document.getElementById('formOk').classList.add('show');
+  return false;
+}
+
+/* ---------- Hero network canvas ---------- */
+(function(){
+  const cv = document.getElementById('net'); if(!cv) return;
+  const ctx = cv.getContext('2d');
+  let w, h, pts, raf;
+  const COL = {line:'196,154,96', line2:'88,132,104', dot:'216,185,138'};
+  function size(){
+    const hero = cv.parentElement;
+    w = cv.width = hero.offsetWidth; h = cv.height = hero.offsetHeight;
+    const n = Math.min(72, Math.floor(w*h/17000));
+    pts = Array.from({length:n}, ()=>({
+      x:Math.random()*w, y:Math.random()*h,
+      vx:(Math.random()-.5)*.28, vy:(Math.random()-.5)*.28,
+      r:Math.random()*1.6+.6
+    }));
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(let i=0;i<pts.length;i++){
+      const p = pts[i];
+      p.x += p.vx; p.y += p.vy;
+      if(p.x<0||p.x>w) p.vx*=-1;
+      if(p.y<0||p.y>h) p.vy*=-1;
+      for(let j=i+1;j<pts.length;j++){
+        const q = pts[j], dx=p.x-q.x, dy=p.y-q.y, d=Math.hypot(dx,dy);
+        if(d<150){
+          const a = (1 - d/150)*.5;
+          ctx.strokeStyle = `rgba(${d<95?COL.line:COL.line2},${a})`;
+          ctx.lineWidth = .7;
+          ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y); ctx.stroke();
+        }
+      }
+    }
+    for(const p of pts){
+      ctx.fillStyle = `rgba(${COL.dot},.8)`;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7); ctx.fill();
+    }
+    raf = requestAnimationFrame(draw);
+  }
+  size(); draw();
+  let t; window.addEventListener('resize', ()=>{ clearTimeout(t); t=setTimeout(size,200); });
+})();
+</script>
+</body>
+</html>

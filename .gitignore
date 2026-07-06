@@ -1,0 +1,12 @@
+# local session/tooling config (machine-specific paths)
+.claude/
+
+# unrelated local file
+/index.html
+
+# node
+node_modules/
+.next/
+out/
+*.log
+.env*
