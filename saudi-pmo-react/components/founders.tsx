@@ -20,6 +20,7 @@ const FOUNDERS: Founder[] = [
   { img: "/founders/qazzaz.jpeg", name: "Amr Qazzaz", arName: "م. عمرو قزاز", role: "Member" },
   { img: "/founders/zidan.png", name: "Mahmoud Zidan", arName: "م. محمود زيدان", role: "Member" },
   { img: "/founders/maha.png", name: "Maha Abdulmajeed", arName: "م. مها عبدالمجيد", role: "Member" },
+  { img: "/founders/mudather.jpeg", name: "Faris Mudather", arName: "م. فارس مدثر", role: "Member" },
 ];
 
 export function Founders() {
