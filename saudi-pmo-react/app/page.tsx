@@ -25,14 +25,14 @@ export default function Home() {
           <header className="max-w-2xl space-y-4">
             <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
               <span className="inline-block h-px w-7 bg-primary" />
-              The founding circle
+              Founders &amp; members
             </p>
             <h2 className="text-balance text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl">
-              Nine practitioners. <em className="not-italic text-primary">One idea.</em>
+              Two founders. <em className="not-italic text-primary">One growing circle.</em>
             </h2>
             <p className="text-pretty text-base leading-relaxed text-muted-foreground">
-              They turned a simple group chat into a movement for the profession —
-              meet the people who laid the first bricks.
+              It started with a simple group chat — meet the founders, and the
+              members building the movement with them.
             </p>
           </header>
           <Founders />

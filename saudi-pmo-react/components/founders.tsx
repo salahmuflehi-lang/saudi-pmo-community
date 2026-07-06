@@ -7,18 +7,19 @@ interface Founder {
   img: string;
   name: string;
   arName: string;
+  role: "Founding Member" | "Member";
 }
 
 const FOUNDERS: Founder[] = [
-  { img: "/founders/milibari.jpeg", name: "Dr. Ali Milibari", arName: "د. علي ميليباري" },
-  { img: "/founders/marabi.png", name: "Ahmed Al-Marabi", arName: "م. أحمد المرعبي" },
-  { img: "/founders/aqqab.jpeg", name: "Hosam Al-Aqqab", arName: "م. حسام العقاب" },
-  { img: "/founders/yanbawi.jpeg", name: "Tariq F. Yanbawi", arName: "م. طارق فؤاد ينبعاوي" },
-  { img: "/founders/ghamdi.jpeg", name: "Emad Al-Ghamdi", arName: "م. عماد الغامدي" },
-  { img: "/founders/qazzaz.jpeg", name: "Amr Qazzaz", arName: "م. عمرو قزاز" },
-  { img: "/founders/ghaith.jpeg", name: "Majed Ghaith", arName: "م. ماجد غيث" },
-  { img: "/founders/zidan.png", name: "Mahmoud Zidan", arName: "م. محمود زيدان" },
-  { img: "/founders/maha.png", name: "Maha Abdulmajeed", arName: "م. مها عبدالمجيد" },
+  { img: "/founders/yanbawi.jpeg", name: "Tariq F. Yanbawi", arName: "م. طارق فؤاد ينبعاوي", role: "Founding Member" },
+  { img: "/founders/ghaith.jpeg", name: "Majed Ghaith", arName: "م. ماجد غيث", role: "Founding Member" },
+  { img: "/founders/milibari.jpeg", name: "Dr. Ali Milibari", arName: "د. علي ميليباري", role: "Member" },
+  { img: "/founders/marabi.png", name: "Ahmed Al-Marabi", arName: "م. أحمد المرعبي", role: "Member" },
+  { img: "/founders/aqqab.jpeg", name: "Hosam Al-Aqqab", arName: "م. حسام العقاب", role: "Member" },
+  { img: "/founders/ghamdi.jpeg", name: "Emad Al-Ghamdi", arName: "م. عماد الغامدي", role: "Member" },
+  { img: "/founders/qazzaz.jpeg", name: "Amr Qazzaz", arName: "م. عمرو قزاز", role: "Member" },
+  { img: "/founders/zidan.png", name: "Mahmoud Zidan", arName: "م. محمود زيدان", role: "Member" },
+  { img: "/founders/maha.png", name: "Maha Abdulmajeed", arName: "م. مها عبدالمجيد", role: "Member" },
 ];
 
 export function Founders() {
@@ -55,10 +56,16 @@ export function Founders() {
                     {f.arName}
                   </p>
                 </div>
-                <span className="shrink-0 text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-primary">
-                  Founding
-                  <br />
-                  Member
+                <span className="shrink-0 text-right text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-primary">
+                  {f.role === "Founding Member" ? (
+                    <>
+                      Founding
+                      <br />
+                      Member
+                    </>
+                  ) : (
+                    "Member"
+                  )}
                 </span>
               </div>
             </div>
