@@ -10,3 +10,6 @@ node_modules/
 out/
 *.log
 .env*
+
+# MCP config contains the Hostinger API token - never commit
+.mcp.json
