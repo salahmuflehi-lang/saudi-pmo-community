@@ -247,6 +247,17 @@ html[dir="rtl"] .pillar .num{right:auto;left:26px}
 .founder .meta .nm{font-weight:600;color:var(--green-deep);font-size:1.05rem;line-height:1.25}
 .founder .meta .nm small{display:block;font-weight:300;color:var(--ink-soft);font-size:.8rem;margin-top:3px;font-family:var(--ar)}
 .founder .meta .role{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;text-align:right;flex:none}
+/* leadership highlight */
+.founder.lead{border:1.5px solid rgba(196,154,96,.65);box-shadow:0 10px 34px -18px rgba(196,154,96,.55)}
+.founder.lead:hover{box-shadow:0 30px 55px -24px rgba(196,154,96,.5)}
+.founder .ltitle{
+  display:flex;align-items:center;gap:6px;
+  font-size:.72rem;font-weight:700;color:var(--gold-deep);
+  letter-spacing:.05em;margin-top:5px;
+}
+html[dir="rtl"] .founder .ltitle{letter-spacing:0}
+.founder .ltitle::before{content:"★";font-size:.66rem;color:var(--gold)}
+html.night .founder .ltitle{color:var(--gold)}
 .founder .seal-badge{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:9px;background:rgba(30,51,41,.55);backdrop-filter:blur(4px);overflow:hidden;opacity:0;transition:.45s}
 .founder .seal-badge::after{content:"";position:absolute;inset:0;background:url(assets/t-icon-offwhite.png) center/64% no-repeat}
 .founder:hover .seal-badge{opacity:1}
@@ -580,15 +591,15 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
       <p data-en="It started with a simple group chat. Meet the founders — and the members building the movement with them." data-ar="بدأت بمحادثةٍ بسيطة. تعرّف على المؤسّسَين — والأعضاء الذين يبنون الحركة معهم.">It started with a simple group chat. Meet the founders — and the members building the movement with them.</p>
     </div>
     <div class="f-grid">
-      <div class="founder rv d1"><div class="ph"><img loading="lazy" src="assets/founder-yanbawi.jpeg" alt="Eng. Tariq Fouad Yanbawi"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Tariq F. Yanbawi<small>م. طارق فؤاد ينبعاوي</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
+      <div class="founder lead rv d1"><div class="ph"><img loading="lazy" src="assets/founder-yanbawi.jpeg" alt="Eng. Tariq Fouad Yanbawi"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Tariq F. Yanbawi<small>م. طارق فؤاد ينبعاوي</small><div class="ltitle" data-en="Community President" data-ar="رئيس المجتمع">Community President</div></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
       <div class="founder rv d2"><div class="ph"><img loading="lazy" src="assets/founder-ghaith.jpeg" alt="Eng. Majed Ghaith"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Majed Ghaith<small>م. ماجد غيث</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
-      <div class="founder rv d3"><div class="ph"><img loading="lazy" src="assets/founder-milibari.jpeg" alt="Dr. Ali Milibari"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Dr. Ali Milibari<small>د. علي ميليباري</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
-      <div class="founder rv d1"><div class="ph"><img loading="lazy" src="assets/founder-marabi.jpeg" alt="Eng. Ahmed Al-Marabi"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Ahmed Al-Marabi<small>م. أحمد المرعبي</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
-      <div class="founder rv d2"><div class="ph"><img loading="lazy" src="assets/founder-aqqab.jpeg" alt="Eng. Hosam Al-Aqqab"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Hosam Al-Aqqab<small>م. حسام العقاب</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
-      <div class="founder rv d3"><div class="ph"><img loading="lazy" src="assets/founder-ghamdi.jpeg" alt="Eng. Emad Al-Ghamdi"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Emad Al-Ghamdi<small>م. عماد الغامدي</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
-      <div class="founder rv d1"><div class="ph"><img loading="lazy" src="assets/founder-qazzaz.jpeg" alt="Eng. Amr Qazzaz"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Amr Qazzaz<small>م. عمرو قزاز</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
-      <div class="founder rv d2"><div class="ph"><img loading="lazy" src="assets/founder-zidan.jpeg" alt="Eng. Mahmoud Zidan"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Mahmoud Zidan<small>م. محمود زيدان</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
-      <div class="founder rv d3"><div class="ph"><img loading="lazy" src="assets/founder-maha.jpeg" alt="Eng. Maha Abdulmajeed"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Maha Abdulmajeed<small>م. مها عبدالمجيد</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
+      <div class="founder lead rv d3"><div class="ph"><img loading="lazy" src="assets/founder-maha.jpeg" alt="Eng. Maha Abdulmajeed"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Maha Abdulmajeed<small>م. مها عبدالمجيد</small><div class="ltitle" data-en="Social Communication Team Lead" data-ar="قائد فريق التواصل الاجتماعي">Social Communication Team Lead</div></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
+      <div class="founder lead rv d1"><div class="ph"><img loading="lazy" src="assets/founder-marabi.jpeg" alt="Eng. Ahmed Al-Marabi"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Ahmed Al-Marabi<small>م. أحمد المرعبي</small><div class="ltitle" data-en="Meetups Team Lead" data-ar="قائد فريق اللقاءات">Meetups Team Lead</div></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
+      <div class="founder rv d2"><div class="ph"><img loading="lazy" src="assets/founder-milibari.jpeg" alt="Dr. Ali Milibari"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Dr. Ali Milibari<small>د. علي ميليباري</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
+      <div class="founder rv d3"><div class="ph"><img loading="lazy" src="assets/founder-aqqab.jpeg" alt="Eng. Hosam Al-Aqqab"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Hosam Al-Aqqab<small>م. حسام العقاب</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
+      <div class="founder rv d1"><div class="ph"><img loading="lazy" src="assets/founder-ghamdi.jpeg" alt="Eng. Emad Al-Ghamdi"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Emad Al-Ghamdi<small>م. عماد الغامدي</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
+      <div class="founder rv d2"><div class="ph"><img loading="lazy" src="assets/founder-qazzaz.jpeg" alt="Eng. Amr Qazzaz"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Amr Qazzaz<small>م. عمرو قزاز</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
+      <div class="founder rv d3"><div class="ph"><img loading="lazy" src="assets/founder-zidan.jpeg" alt="Eng. Mahmoud Zidan"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Mahmoud Zidan<small>م. محمود زيدان</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
       <div class="founder rv d1"><div class="ph"><img loading="lazy" src="assets/founder-mudather.jpeg" alt="Eng. Faris Mudather"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Faris Mudather<small>م. فارس مدثر</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
       <div class="founder rv d2"><div class="ph"><img loading="lazy" src="assets/founder-afandi.jpeg" alt="Eng. Mohammed Afandi"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Mohammed Afandi<small>م. محمد أفندي</small></div><div class="role" data-en="Member" data-ar="عضو">Member</div></div></div>
     </div>
