@@ -26,6 +26,28 @@ Open `index.html` in any browser, or serve the folder with any static host.
 | Program cadence / copy | `.prog-grid` section |
 | Contact email / socials | footer `.foot-col` blocks |
 
+## Join form — where submissions go
+
+**Active now — email:** every "Request to join" submission is emailed to
+`mabaniprojects@gmail.com` via [formsubmit.co](https://formsubmit.co) (see
+`NOTIFY_EMAIL` in `index.html`). One-time setup: the first submission triggers
+an **activation email** to that inbox — click **Activate** once and all future
+submissions arrive as formatted emails. Optional: the activation page also
+shows a random alias endpoint; paste it over the email in `NOTIFY_EMAIL` to
+keep the address out of the page source.
+
+**Optional upgrade — database:** to also store submissions in a real Postgres
+table (searchable, exportable):
+
+1. Create a free project at [supabase.com](https://supabase.com) using the same email
+   (region close to Riyadh, e.g. Frankfurt).
+2. Open **SQL Editor**, paste [`db/supabase-setup.sql`](db/supabase-setup.sql), **Run**.
+3. Copy from **Settings → API** the **Project URL** + **anon public** key into the
+   `DB` constant in `index.html`, push — the form switches from email to database.
+
+The anon key is safe to publish: row-level security lets the public site
+*insert only* — reading requires your dashboard login.
+
 ## ⚠️ Source asset naming (pmos asseds folder)
 
 The original files in `Downloads/pmos asseds/` have **scrambled names** — verified visually:

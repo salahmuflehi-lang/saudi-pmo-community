@@ -763,11 +763,72 @@ function toggleTheme(){
 /* Arabic is the default language — the toggle switches to English */
 toggleLang();
 
-/* ---------- Join form ---------- */
-function submitJoin(e){
+/* ---------- Join form → database (Supabase) ----------
+   To activate: create a free project at supabase.com, run db/supabase-setup.sql
+   in its SQL editor, then fill in the two values below (Settings → API).
+   The anon key is safe to publish: row-level security only allows INSERT. */
+const DB = {
+  url: "",     // e.g. "https://abcd1234.supabase.co"
+  anonKey: ""  // the "anon public" key
+};
+/* Every submission is emailed here via formsubmit.co (no account needed).
+   First submission triggers a one-time activation email to this address. */
+const NOTIFY_EMAIL = "mabaniprojects@gmail.com";
+
+async function submitJoin(e){
   e.preventDefault();
-  document.getElementById('joinForm').style.display = 'none';
-  document.getElementById('formOk').classList.add('show');
+  const form = document.getElementById('joinForm');
+  const note = form.querySelector('.note');
+  const btn  = form.querySelector('button[type="submit"]');
+  const showOk = () => {
+    form.style.display = 'none';
+    document.getElementById('formOk').classList.add('show');
+  };
+  const inputs = form.querySelectorAll('input');
+  const payload = {
+    full_name:    inputs[0].value.trim(),
+    email:        inputs[1].value.trim(),
+    organization: inputs[2].value.trim() || null,
+    role:         form.querySelector('select').value || null,
+    lang:         document.documentElement.lang
+  };
+  btn.disabled = true; btn.style.opacity = .6;
+  try{
+    if(DB.url && DB.anonKey){
+      // Primary: store in the Supabase database
+      const r = await fetch(DB.url + '/rest/v1/join_requests', {
+        method: 'POST',
+        headers: {
+          'apikey': DB.anonKey,
+          'Authorization': 'Bearer ' + DB.anonKey,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(payload)
+      });
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+    } else {
+      // Email delivery to NOTIFY_EMAIL
+      const r = await fetch('https://formsubmit.co/ajax/' + NOTIFY_EMAIL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'New Saudi PMO Community join request',
+          _template: 'table',
+          ...payload
+        })
+      });
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+    }
+    showOk();
+  }catch(err){
+    note.textContent = document.documentElement.lang === 'ar'
+      ? 'تعذّر الإرسال — تحقق من الاتصال وحاول مجددًا.'
+      : "Couldn't send — check your connection and try again.";
+    note.style.color = '#e4a3a3'; note.style.opacity = 1;
+  }finally{
+    btn.disabled = false; btn.style.opacity = 1;
+  }
   return false;
 }
 
