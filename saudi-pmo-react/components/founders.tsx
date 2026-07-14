@@ -15,16 +15,16 @@ interface Founder {
 const FOUNDERS: Founder[] = [
   { img: "/founders/yanbawi.jpeg", name: "Tariq F. Yanbawi", arName: "م. طارق فؤاد ينبعاوي", role: "Founding Member", title: "Community President", arTitle: "رئيس المجتمع" },
   { img: "/founders/ghaith.jpeg", name: "Majed Ghaith", arName: "م. ماجد غيث", role: "Founding Member" },
-  { img: "/founders/milibari.jpeg", name: "Dr. Ali Milibari", arName: "د. علي ميليباري", role: "Member" },
-  { img: "/founders/qazzaz.jpeg", name: "Amr Qazzaz", arName: "م. عمرو قزاز", role: "Member" },
-  { img: "/founders/ghamdi.jpeg", name: "Emad Al-Ghamdi", arName: "م. عماد الغامدي", role: "Member" },
-  { img: "/founders/afandi.jpeg", name: "Mohammed Afandi", arName: "م. محمد أفندي", role: "Member" },
+  { img: "/founders/milibari.jpeg", name: "Dr. Ali Milibari", arName: "د. علي ميليباري", role: "Founding Member" },
+  { img: "/founders/qazzaz.jpeg", name: "Amr Qazzaz", arName: "م. عمرو قزاز", role: "Founding Member", title: "Community Vice President", arTitle: "نائب رئيس المجتمع" },
+  { img: "/founders/ghamdi.jpeg", name: "Emad Al-Ghamdi", arName: "م. عماد الغامدي", role: "Founding Member" },
+  { img: "/founders/afandi.jpeg", name: "Mohammed Afandi", arName: "م. محمد أفندي", role: "Founding Member" },
   { img: "/founders/maha.jpeg", name: "Maha Abdulmajeed", arName: "م. مها عبدالمجيد", role: "Member", title: "Social Communication Team Lead", arTitle: "قائد فريق التواصل الاجتماعي" },
   { img: "/founders/marabi.jpeg", name: "Ahmed Al-Marabi", arName: "م. أحمد المرعبي", role: "Member", title: "Meetups Team Lead", arTitle: "قائد فريق اللقاءات" },
-  { img: "/founders/aqqab.jpeg", name: "Hosam Oqab", arName: "م. حسام عقاب", role: "Member" },
-  { img: "/founders/zidan.jpeg", name: "Mahmoud Zidan", arName: "م. محمود زيدان", role: "Member" },
-  { img: "/founders/mudather.jpeg", name: "Faris Mudather", arName: "م. فارس مدثر", role: "Member" },
-  { img: "/founders/alhadi.jpeg", name: "Al-Hadi", arName: "م. الهادي", role: "Member" },
+  { img: "/founders/aqqab.jpeg", name: "Hosam Oqab", arName: "م. حسام عقاب", role: "Founding Member" },
+  { img: "/founders/zidan.jpeg", name: "Mahmoud Zidan", arName: "م. محمود زيدان", role: "Founding Member" },
+  { img: "/founders/mudather.jpeg", name: "Faris Mudather", arName: "م. فارس مدثر", role: "Founding Member" },
+  { img: "/founders/alhadi.jpeg", name: "Al-Hadi", arName: "م. الهادي", role: "Founding Member" },
 ];
 
 export function Founders() {

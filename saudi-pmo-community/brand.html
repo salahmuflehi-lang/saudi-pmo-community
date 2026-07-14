@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الهوية البصرية — مجتمع مكاتب إدارة المشاريع السعودي</title>
+<meta name="description" content="قصة الهوية البصرية لمجتمع مكاتب إدارة المشاريع السعودي — مشتقة من عمارة نجد ونقوش بيوت الطين.">
+<meta name="theme-color" content="#1E3329">
+<link rel="icon" type="image/png" href="assets/t-icon-green.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2B4A3A; --green-deep:#1E3329; --gold:#C49A60; --gold-deep:#A87E47;
+  --sand:#D8B98A; --cream:#F1EADB; --paper:#FBF8F1; --ink:#1B1B18; --ink-soft:#4A4A44;
+  --line:rgba(43,74,58,.14); --ar:'Tajawal',sans-serif; --sans:'Alexandria',sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--ar);background:var(--paper);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+
+.hero{background:var(--green-deep);color:var(--cream);padding:90px 0 70px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:56px;opacity:.45;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='70' viewBox='0 0 34 70'%3E%3Cpath d='M0 70 L17 44 L34 70 Z M0 44 L17 18 L34 44' fill='none' stroke='%23C49A60' stroke-width='2'/%3E%3C/svg%3E");background-size:28px 56px}
+.hero .logo{height:120px;width:auto;margin-bottom:26px}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.08em;color:var(--sand);margin-bottom:14px}
+h1{font-size:clamp(1.9rem,4.4vw,3rem);font-weight:800;line-height:1.25}
+h1 em{font-style:normal;color:var(--gold)}
+.hero p{max-width:60ch;color:rgba(241,234,219,.85);margin-top:16px;font-size:1.06rem}
+.back{display:inline-flex;align-items:center;gap:8px;margin-top:30px;padding:11px 22px;border:1.5px solid rgba(241,234,219,.4);border-radius:100px;font-size:.9rem;transition:.3s var(--ease)}
+.back:hover{background:var(--gold);border-color:var(--gold);color:var(--green-deep)}
+
+.sec{padding:70px 0}
+.sec h2{font-family:var(--ar);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;color:var(--green-deep);margin-bottom:16px}
+.sec p{color:var(--ink-soft);max-width:70ch;margin-bottom:14px}
+.story{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.story img{width:100%;border-radius:20px;box-shadow:0 26px 60px -28px rgba(43,74,58,.5)}
+.en{display:block;font-family:var(--sans);font-size:.85rem;color:var(--gold-deep);direction:ltr;text-align:left;margin-top:18px}
+
+.motif{background:var(--cream);padding:60px 0}
+.motif .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:26px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px}
+.card h3{font-weight:800;color:var(--green-deep);margin-bottom:8px;font-size:1.05rem}
+.card p{font-size:.94rem;color:var(--ink-soft)}
+.card img{width:100%;border-radius:12px;margin-top:14px}
+.seal{height:120px;margin:10px auto 0;display:block}
+
+.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:26px}
+.sw{border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.sw .c{height:86px}
+.sw .t{padding:10px 12px;font-size:.78rem;background:var(--paper)}
+.sw .t b{display:block;color:var(--green-deep)}
+.sw .t span{font-family:var(--sans);color:var(--ink-soft);direction:ltr;display:block}
+
+.type-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+.type-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px}
+.type-card .big{font-size:2rem;font-weight:800;color:var(--green-deep)}
+.type-card.latin .big{font-family:var(--sans);direction:ltr;text-align:left}
+.type-card small{color:var(--gold-deep);font-weight:700;font-size:.78rem;letter-spacing:.04em}
+
+.footer{background:var(--green-deep);color:rgba(241,234,219,.75);padding:34px 0;font-size:.85rem;text-align:center}
+.footer a{color:var(--gold)}
+
+@media(max-width:760px){
+  .story{grid-template-columns:1fr}
+  .motif .grid,.type-row{grid-template-columns:1fr}
+  .palette{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="logo" src="assets/t-logo-h-offwhite.png" alt="مجتمع مكاتب إدارة المشاريع السعودي">
+    <div class="eyebrow">الهوية البصرية · دليل الهوية V1.1</div>
+    <h1>هويةٌ مشتقة من <em>عمارة نجد.</em></h1>
+    <p>كل عنصر في هوية المجتمع يبدأ من مكانٍ واحد: بيوت الطين النجدية، بجدرانها السميكة، ونقوشها المحفورة، ومثلثاتها المتكررة — عمارةٌ بُنيت لبنةً فوق لبنة، كما تُبنى المجتمعات.</p>
+    <a class="back" href="index.html">← العودة إلى الموقع</a>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap story">
+    <div>
+      <h2>القصة</h2>
+      <p>خاتَم «PMOS» مرسومٌ على هيئة النقوش المحفورة في جدران بيوت الطين في نجد — علامة الإتقان والنظام والانتماء. حروفه تتشابك كما تتشابك الأزقة في الحارة القديمة، ويحدّها إطارٌ يذكّر بإطار الباب النجدي.</p>
+      <p>اخترنا هذا المرجع لأنه يشبه عمل مكاتب إدارة المشاريع نفسه: أساسٌ متين، وتخطيطٌ واضح، وتفاصيل صغيرة متقنة يتكوّن منها أثرٌ كبير. المستقبل يُبنى دائمًا على أساس.</p>
+      <span class="en">The PMOS seal is drawn like the carved motifs of Najdi mud-brick homes — a mark of craft, order and belonging. The future is always built on foundations.</span>
+    </div>
+    <img src="assets/hero-heritage.png" alt="عمارة نجدية تحمل خاتم المجتمع">
+  </div>
+</section>
+
+<section class="motif">
+  <div class="wrap">
+    <h2>عناصر الهوية</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>الخاتَم</h3>
+        <p>شعار «PMOS» بأسلوب الختم المحفور — يُستخدم بالأخضر على الخلفيات الفاتحة، وبالأبيض الكريمي على الأخضر العميق.</p>
+        <img class="seal" src="assets/t-icon-green.png" alt="خاتم PMOS">
+      </div>
+      <div class="card">
+        <h3>زخرفة المثلثات النجدية</h3>
+        <p>شريط المثلثات المستوحى من أفاريز العمارة النجدية يُستخدم فاصلًا بين الأقسام وحليةً على الحواف.</p>
+        <img src="assets/scene-building.png" alt="لبنات الطين والزخرفة النجدية">
+      </div>
+    </div>
+
+    <h2 style="margin-top:50px">الألوان</h2>
+    <p style="color:var(--ink-soft)">ألوان الطين والنخيل والرمل — أخضرٌ عميق للأصالة، وذهبيٌ للكرم، ودرجات الرمل والكريم للدفء.</p>
+    <div class="palette">
+      <div class="sw"><div class="c" style="background:#1E3329"></div><div class="t"><b>الأخضر العميق</b><span>#1E3329</span></div></div>
+      <div class="sw"><div class="c" style="background:#2B4A3A"></div><div class="t"><b>أخضر النخيل</b><span>#2B4A3A</span></div></div>
+      <div class="sw"><div class="c" style="background:#C49A60"></div><div class="t"><b>الذهبي</b><span>#C49A60</span></div></div>
+      <div class="sw"><div class="c" style="background:#D8B98A"></div><div class="t"><b>الرملي</b><span>#D8B98A</span></div></div>
+      <div class="sw"><div class="c" style="background:#F1EADB"></div><div class="t"><b>الكريمي</b><span>#F1EADB</span></div></div>
+    </div>
+
+    <h2 style="margin-top:50px">الخطوط</h2>
+    <div class="type-row">
+      <div class="type-card">
+        <small>العربية — Tajawal</small>
+        <div class="big">نبني معًا، لبنةً لبنة.</div>
+      </div>
+      <div class="type-card latin">
+        <small>English — Alexandria</small>
+        <div class="big">Built together, brick by brick.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">© 2026 مجتمع مكاتب إدارة المشاريع السعودي · <a href="index.html">الصفحة الرئيسية</a> · <a href="mailto:info@spmoc.org">info@spmoc.org</a></div>
+</footer>
+
+</body>
+</html>
