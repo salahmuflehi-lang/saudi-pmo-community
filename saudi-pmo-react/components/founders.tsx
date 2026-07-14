@@ -20,12 +20,12 @@ const FOUNDERS: Founder[] = [
   { img: "/founders/qazzaz.jpeg", name: "Amr Qazzaz", arName: "م. عمرو قزاز", role: "Founding Member", title: "Community Vice President", arTitle: "نائب رئيس المجتمع" , linkedin: "https://www.linkedin.com/in/amr-gazzaz-58996079/" },
   { img: "/founders/ghamdi.jpeg", name: "Emad Al-Ghamdi", arName: "م. عماد الغامدي", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/emadpmo" },
   { img: "/founders/afandi.jpeg", name: "Mohammed Afandi", arName: "م. محمد أفندي", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/mafandi/" },
-  { img: "/founders/maha.jpeg", name: "Maha Abdulmajeed", arName: "م. مها عبدالمجيد", role: "Member", title: "Social Communication Team Lead", arTitle: "قائد فريق التواصل الاجتماعي" , linkedin: "https://www.linkedin.com/in/mahaabdalmageed/" },
-  { img: "/founders/marabi.jpeg", name: "Ahmed Al-Marabi", arName: "م. أحمد المرعبي", role: "Member", title: "Meetups Team Lead", arTitle: "قائد فريق اللقاءات" , linkedin: "https://www.linkedin.com/in/ahmad-al-merhebi-06107757/" },
+  { img: "/founders/maha.jpeg", name: "Maha Abdulmajeed", arName: "م. مها عبدالمجيد", role: "Founding Member", title: "Social Communication Team Lead", arTitle: "قائد فريق التواصل الاجتماعي" , linkedin: "https://www.linkedin.com/in/mahaabdalmageed/" },
+  { img: "/founders/marabi.jpeg", name: "Ahmed Al-Marabi", arName: "م. أحمد المرعبي", role: "Founding Member", title: "Meetups Team Lead", arTitle: "قائد فريق اللقاءات" , linkedin: "https://www.linkedin.com/in/ahmad-al-merhebi-06107757/" },
   { img: "/founders/aqqab.jpeg", name: "Hosam Oqab", arName: "م. حسام عقاب", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/hosam-oqab-msc-pfmp%C2%AE-pmo-ip%C2%AE-pmi-pmocp%C2%AE-84b17235/" },
   { img: "/founders/zidan.jpeg", name: "Mahmoud Zidan", arName: "م. محمود زيدان", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/mahmoud-zeidan/" },
   { img: "/founders/mudather.jpeg", name: "Faris Mudather", arName: "م. فارس مدثر", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/faris-mudathir-mohamed-409524b2" },
-  { img: "/founders/alhadi.jpeg", name: "Al-Hadi", arName: "م. الهادي", role: "Founding Member", linkedin: "https://www.linkedin.com/in/elhadielnigumi/" },
+  { img: "/founders/alhadi.jpeg", name: "Elhadi Elnigumi", arName: "م. الهادي النجومي", role: "Founding Member", linkedin: "https://www.linkedin.com/in/elhadielnigumi/" },
 ];
 
 export function Founders() {
