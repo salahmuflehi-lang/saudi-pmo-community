@@ -15,9 +15,9 @@ interface Founder {
 
 const FOUNDERS: Founder[] = [
   { img: "/founders/yanbawi.jpeg", name: "Tariq F. Yanbawi", arName: "م. طارق فؤاد ينبعاوي", role: "Founding Member", title: "Community President", arTitle: "رئيس المجتمع" , linkedin: "https://www.linkedin.com/in/tareq-yanbawi/" },
-  { img: "/founders/ghaith.jpeg", name: "Majed Ghaith", arName: "م. ماجد غيث", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/majedghaith/" },
-  { img: "/founders/milibari.jpeg", name: "Dr. Ali Milibari", arName: "د. علي ميليباري", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/dr-ali-o-melibari-618baa279/" },
   { img: "/founders/qazzaz.jpeg", name: "Amr Qazzaz", arName: "م. عمرو قزاز", role: "Founding Member", title: "Community Vice President", arTitle: "نائب رئيس المجتمع" , linkedin: "https://www.linkedin.com/in/amr-gazzaz-58996079/" },
+  { img: "/founders/milibari.jpeg", name: "Dr. Ali Milibari", arName: "د. علي ميليباري", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/dr-ali-o-melibari-618baa279/" },
+  { img: "/founders/ghaith.jpeg", name: "Majed Ghaith", arName: "م. ماجد غيث", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/majedghaith/" },
   { img: "/founders/ghamdi.jpeg", name: "Emad Al-Ghamdi", arName: "م. عماد الغامدي", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/emadpmo" },
   { img: "/founders/afandi.jpeg", name: "Mohammed Afandi", arName: "م. محمد أفندي", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/mafandi/" },
   { img: "/founders/maha.jpeg", name: "Maha Abdulmajeed", arName: "م. مها عبدالمجيد", role: "Founding Member", title: "Social Communication Team Lead", arTitle: "قائد فريق التواصل الاجتماعي" , linkedin: "https://www.linkedin.com/in/mahaabdalmageed/" },
