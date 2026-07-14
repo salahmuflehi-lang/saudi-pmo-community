@@ -6,6 +6,7 @@ create table if not exists public.join_requests (
   created_at   timestamptz not null default now(),
   full_name    text not null,
   email        text not null,
+  phone        text,
   organization text,
   role         text,
   lang         text

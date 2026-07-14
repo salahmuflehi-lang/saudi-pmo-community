@@ -614,7 +614,7 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
     <div class="join-card rv">
       <div class="join-txt">
         <span class="eyebrow" style="color:var(--sand)" data-en="Become a member" data-ar="كن عضوًا">Become a member</span>
-        <h2 data-en="Build the future of <em>delivery</em> with us." data-ar="لنبنِ مستقبل <em>التسليم</em> معًا.">Build the future of <em>delivery</em> with us.</h2>
+        <h2 data-en="Let&#39;s contribute to building a <em>better future.</em>" data-ar="لنساهم في بناء <em>مستقبل أفضل.</em>">Let&#39;s contribute to building a <em>better future.</em></h2>
         <p data-en="Membership is open to everyone interested in project management and PMOs — students, practitioners and experts alike. Tell us a little about you and we'll welcome you in." data-ar="العضوية مفتوحة لجميع المهتمين بمجال إدارة المشاريع ومكاتب إدارة المشاريع — طلابًا وممارسين وخبراء. أخبرنا القليل عنك وسنرحّب بك.">Membership is open to everyone interested in project management and PMOs — students, practitioners and experts alike. Tell us a little about you and we'll welcome you in.</p>
       </div>
       <form class="form" id="joinForm" onsubmit="return submitJoin(event)">
@@ -622,7 +622,10 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
           <input type="text" required data-ph-en="Full name" data-ph-ar="الاسم الكامل" placeholder="Full name">
           <input type="email" required data-ph-en="Email address" data-ph-ar="البريد الإلكتروني" placeholder="Email address">
         </div>
-        <input type="text" data-ph-en="Organization" data-ph-ar="جهة العمل" placeholder="Organization">
+        <div class="row">
+          <input type="tel" required data-ph-en="Phone number" data-ph-ar="رقم الجوال" placeholder="Phone number">
+          <input type="text" required data-ph-en="Organization" data-ph-ar="جهة العمل" placeholder="Organization">
+        </div>
         <select required>
           <option value="" disabled selected data-en="Membership category" data-ar="فئة العضوية">Membership category</option>
           <option data-en="Enthusiast — student, graduate, or exploring the field" data-ar="مهتم — طالب أو خريج أو راغب في دخول المجال">Enthusiast — student, graduate, or exploring the field</option>
@@ -797,37 +800,55 @@ async function submitJoin(e){
   const payload = {
     full_name:    inputs[0].value.trim(),
     email:        inputs[1].value.trim(),
-    organization: inputs[2].value.trim() || null,
+    phone:        inputs[2].value.trim(),
+    organization: inputs[3].value.trim(),
     role:         form.querySelector('select').value || null,
     lang:         document.documentElement.lang
   };
   btn.disabled = true; btn.style.opacity = .6;
+  const saveToDb = async () => {
+    const send = (body) => fetch(DB.url + '/rest/v1/join_requests', {
+      method: 'POST',
+      headers: {
+        'apikey': DB.anonKey,
+        'Authorization': 'Bearer ' + DB.anonKey,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(body)
+    });
+    let r = await send(payload);
+    if(r.status === 400){
+      // phone column may not exist yet — fold it into organization so no signup is lost
+      const alt = { ...payload };
+      delete alt.phone;
+      alt.organization = payload.organization + ' | هاتف: ' + payload.phone;
+      r = await send(alt);
+    }
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+  };
+  const sendEmail = async () => {
+    const r = await fetch('https://formsubmit.co/ajax/' + NOTIFY_EMAIL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'New Saudi PMO Community join request',
+        _template: 'table',
+        ...payload
+      })
+    });
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+  };
   try{
     if(DB.url && DB.anonKey){
-      // Primary: store in the Supabase database
-      const r = await fetch(DB.url + '/rest/v1/join_requests', {
-        method: 'POST',
-        headers: {
-          'apikey': DB.anonKey,
-          'Authorization': 'Bearer ' + DB.anonKey,
-          'Content-Type': 'application/json',
-          'Prefer': 'return=minimal'
-        },
-        body: JSON.stringify(payload)
-      });
-      if(!r.ok) throw new Error('HTTP ' + r.status);
+      try{
+        await saveToDb();
+      }catch(dbErr){
+        // database unreachable (e.g. project paused) — deliver by email instead
+        await sendEmail();
+      }
     } else {
-      // Email delivery to NOTIFY_EMAIL
-      const r = await fetch('https://formsubmit.co/ajax/' + NOTIFY_EMAIL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          _subject: 'New Saudi PMO Community join request',
-          _template: 'table',
-          ...payload
-        })
-      });
-      if(!r.ok) throw new Error('HTTP ' + r.status);
+      await sendEmail();
     }
     showOk();
   }catch(err){
