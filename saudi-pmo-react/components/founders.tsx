@@ -25,7 +25,7 @@ const FOUNDERS: Founder[] = [
   { img: "/founders/aqqab.jpeg", name: "Hosam Oqab", arName: "م. حسام عقاب", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/hosam-oqab-msc-pfmp%C2%AE-pmo-ip%C2%AE-pmi-pmocp%C2%AE-84b17235/" },
   { img: "/founders/zidan.jpeg", name: "Mahmoud Zidan", arName: "م. محمود زيدان", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/mahmoud-zeidan/" },
   { img: "/founders/mudather.jpeg", name: "Faris Mudather", arName: "م. فارس مدثر", role: "Founding Member" , linkedin: "https://www.linkedin.com/in/faris-mudathir-mohamed-409524b2" },
-  { img: "/founders/alhadi.jpeg", name: "Al-Hadi", arName: "م. الهادي", role: "Founding Member" },
+  { img: "/founders/alhadi.jpeg", name: "Al-Hadi", arName: "م. الهادي", role: "Founding Member", linkedin: "https://www.linkedin.com/in/elhadielnigumi/" },
 ];
 
 export function Founders() {

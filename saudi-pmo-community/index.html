@@ -240,10 +240,10 @@ html[dir="rtl"] .pillar .num{right:auto;left:26px}
 }
 .founder:hover{transform:translateY(-6px);box-shadow:0 30px 55px -28px rgba(43,74,58,.5)}
 .founder .ph{aspect-ratio:1/1;overflow:hidden;position:relative;background:var(--green-soft)}
-.founder .ph a{display:block;width:100%;height:100%}
+.founder .ph a{display:block;width:100%;height:100%;position:relative;z-index:3;cursor:pointer}
 .founder .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15);transition:.6s var(--ease)}
 .founder:hover .ph img{filter:grayscale(0);transform:scale(1.05)}
-.founder .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(30,51,41,.28))}
+.founder .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(30,51,41,.28));pointer-events:none}
 .founder .meta{padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:10px}
 .founder .meta .nm{font-weight:600;color:var(--green-deep);font-size:1.05rem;line-height:1.25}
 .founder .meta .nm small{display:block;font-weight:300;color:var(--ink-soft);font-size:.8rem;margin-top:3px;font-family:var(--ar)}
@@ -259,7 +259,7 @@ html[dir="rtl"] .pillar .num{right:auto;left:26px}
 html[dir="rtl"] .founder .ltitle{letter-spacing:0}
 .founder .ltitle::before{content:"★";font-size:.66rem;color:var(--gold)}
 html.night .founder .ltitle{color:var(--gold)}
-.founder .seal-badge{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:9px;background:rgba(30,51,41,.55);backdrop-filter:blur(4px);overflow:hidden;opacity:0;transition:.45s}
+.founder .seal-badge{pointer-events:none;position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:9px;background:rgba(30,51,41,.55);backdrop-filter:blur(4px);overflow:hidden;opacity:0;transition:.45s}
 .founder .seal-badge::after{content:"";position:absolute;inset:0;background:url(assets/t-icon-offwhite.png) center/64% no-repeat}
 .founder:hover .seal-badge{opacity:1}
 
@@ -603,7 +603,7 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
       <div class="founder rv d3"><div class="ph"><a href="https://www.linkedin.com/in/hosam-oqab-msc-pfmp%C2%AE-pmo-ip%C2%AE-pmi-pmocp%C2%AE-84b17235/" target="_blank" rel="noopener" aria-label="LinkedIn — Hosam Oqab"><img loading="lazy" src="assets/founder-aqqab.jpeg" alt="Eng. Hosam Oqab"></a><div class="seal-badge"></div></div><div class="meta"><div class="nm">Hosam Oqab<small>م. حسام عقاب</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
       <div class="founder rv d1"><div class="ph"><a href="https://www.linkedin.com/in/mahmoud-zeidan/" target="_blank" rel="noopener" aria-label="LinkedIn — Mahmoud Zidan"><img loading="lazy" src="assets/founder-zidan.jpeg" alt="Eng. Mahmoud Zidan"></a><div class="seal-badge"></div></div><div class="meta"><div class="nm">Mahmoud Zidan<small>م. محمود زيدان</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
       <div class="founder rv d2"><div class="ph"><a href="https://www.linkedin.com/in/faris-mudathir-mohamed-409524b2" target="_blank" rel="noopener" aria-label="LinkedIn — Faris Mudather"><img loading="lazy" src="assets/founder-mudather.jpeg" alt="Eng. Faris Mudather"></a><div class="seal-badge"></div></div><div class="meta"><div class="nm">Faris Mudather<small>م. فارس مدثر</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
-      <div class="founder rv d3"><div class="ph"><img loading="lazy" src="assets/founder-alhadi.jpeg" alt="Eng. Al-Hadi"><div class="seal-badge"></div></div><div class="meta"><div class="nm">Al-Hadi<small>م. الهادي</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
+      <div class="founder rv d3"><div class="ph"><a href="https://www.linkedin.com/in/elhadielnigumi/" target="_blank" rel="noopener" aria-label="LinkedIn — Al-Hadi"><img loading="lazy" src="assets/founder-alhadi.jpeg" alt="Eng. Al-Hadi"></a><div class="seal-badge"></div></div><div class="meta"><div class="nm">Al-Hadi<small>م. الهادي</small></div><div class="role" data-en="Founding<br>Member" data-ar="عضو<br>مؤسّس">Founding<br>Member</div></div></div>
     </div>
   </div>
 </section>
