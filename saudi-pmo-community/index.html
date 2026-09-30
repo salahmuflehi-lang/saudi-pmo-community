@@ -142,6 +142,14 @@ html[dir="rtl"] .hero-logo .lock{background-image:url(assets/hero-ar-offwhite.pn
 .scroll-cue .mouse::after{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:3px;height:6px;border-radius:2px;background:var(--gold);animation:wheel 1.6s infinite}
 @keyframes wheel{0%{opacity:0;top:6px}40%{opacity:1}80%{opacity:0;top:16px}}
 
+/* ---------- AFFILIATION BAR ---------- */
+.affil-bar{position:absolute;top:88px;left:0;right:0;z-index:3;text-align:center;padding:0 16px}
+.affil-bar span{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border:1px solid rgba(196,154,96,.4);border-radius:100px;background:rgba(30,51,41,.4);backdrop-filter:blur(6px);color:var(--sand);font-size:.78rem;font-weight:400;line-height:1.5}
+.affil-bar img,.affil-line img{height:26px;width:auto}
+.affil-bar img[hidden],.affil-line img[hidden]{display:none}
+.affil-line{flex-basis:100%;display:flex;justify-content:center;align-items:center;gap:10px;text-align:center;color:rgba(241,234,219,.8);font-size:.86rem;padding-bottom:14px;border-bottom:1px solid var(--line-d);margin-bottom:12px}
+@media(max-width:560px){.affil-bar{top:76px}.affil-bar span{font-size:.68rem;padding:6px 12px}}
+
 /* ---------- MARQUEE ---------- */
 .strip{background:var(--green);color:var(--cream);padding:16px 0;overflow:hidden;border-top:1px solid var(--green-line)}
 .marquee{display:flex;gap:60px;white-space:nowrap;width:max-content;animation:scrollx 32s linear infinite}
@@ -430,6 +438,7 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
   <canvas id="net"></canvas>
+  <div class="affil-bar"><span><img id="affilLogoTop" alt="جمعية إدارة المشاريع" hidden><b style="font-weight:400" data-en="The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association" data-ar="مجتمع مكاتب إدارة المشاريع السعودي مبادرة معتمدة تحت مظلة جمعية إدارة المشاريع">The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association</b></span></div>
   <div class="hero-glow g1"></div>
   <div class="hero-glow g2"></div>
   <div class="wrap">
@@ -442,10 +451,8 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
         <a href="#about" class="btn btn-ghost" data-en="Discover the story" data-ar="اكتشف القصة">Discover the story</a>
       </div>
       <div class="hero-badges">
-        <div class="hero-badge"><b class="count" data-target="500" data-suffix="+">0</b><span data-en="Members" data-ar="عضو">Members</span></div>
-        <div class="hero-badge"><b class="count" data-target="8" data-suffix="">0</b><span data-en="Sectors" data-ar="قطاعات">Sectors</span></div>
+        <div class="hero-badge"><b class="count" data-target="2000" data-suffix="+">0</b><span data-en="Members" data-ar="عضو">Members</span></div>
         <div class="hero-badge"><b class="count" data-target="10" data-suffix="+">0</b><span data-en="Events hosted" data-ar="فعالية">Events hosted</span></div>
-        <div class="hero-badge"><b class="count" data-target="12" data-suffix="">0</b><span data-en="Founders" data-ar="مؤسّسون">Founders</span></div>
       </div>
     </div>
     <div class="hero-logo"><div class="lock"></div></div>
@@ -470,15 +477,16 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
   <div class="wrap about-grid">
     <div class="about-txt">
       <span class="eyebrow rv" data-en="Who we are" data-ar="من نحن">Who we are</span>
-      <h2 class="rv d1" style="font-size:clamp(2rem,3.6vw,3.1rem);color:var(--green-deep);margin-bottom:22px" data-en="A leading professional platform." data-ar="منصة مهنية رائدة.">A leading professional platform.</h2>
-      <p class="lead-line rv d1" data-en="Our vision: to be a leading professional platform that supports and empowers everyone working in — and passionate about — project management and PMOs, raising performance and professional competence across all sectors in support of the Kingdom's Vision and its strategic goals." data-ar="رؤيتنا: أن نكون منصة مهنية رائدة في دعم وتمكين العاملين والمهتمين بمجال إدارة المشاريع ومكاتب إدارة المشاريع، والمساهمة في تحسين الأداء ورفع الكفاءة المهنية في مختلف القطاعات، بما يدعم رؤية المملكة وأهدافها الاستراتيجية.">Our vision: to be a leading professional platform that supports and empowers everyone working in — and passionate about — project management and PMOs, raising performance and professional competence across all sectors in support of the Kingdom's Vision and its strategic goals.</p>
-      <p class="rv d2" data-en="The Saudi PMO Community is a professional, knowledge-driven initiative that supports and empowers everyone interested in project management and PMOs across all sectors — an interactive platform bringing together specialists, practitioners, students and enthusiasts, offering a professional environment for exchanging knowledge and experience, developing skills, and advancing modern project-management practice." data-ar="مجتمع مكاتب إدارة المشاريع السعودي مبادرة مهنية ومعرفية تهدف إلى دعم وتمكين جميع المهتمين بمجال إدارة المشاريع ومكاتب إدارة المشاريع في مختلف القطاعات — منصة تفاعلية تجمع المختصين والممارسين والطلاب والمهتمين، وتوفّر بيئة مهنية لتبادل المعرفة والخبرات، وتطوير المهارات، وتعزيز الممارسات الحديثة في إدارة المشاريع.">The Saudi PMO Community is a professional, knowledge-driven initiative that supports and empowers everyone interested in project management and PMOs across all sectors — an interactive platform bringing together specialists, practitioners, students and enthusiasts, offering a professional environment for exchanging knowledge and experience, developing skills, and advancing modern project-management practice.</p>
-      <p class="rv d3" data-en="Our seal is drawn like the carved motifs of Najdi mud-brick homes — a mark of craft, order, and belonging. It reminds us that the future is always built on foundations." data-ar="خاتَمنا مرسومٌ على هيئة النقوش المحفورة في بيوت الطين النجدية — علامة الإتقان والنظام والانتماء. يذكّرنا بأن المستقبل يُبنى دائمًا على أساس.">Our seal is drawn like the carved motifs of Najdi mud-brick homes — a mark of craft, order, and belonging. It reminds us that the future is always built on foundations.</p>
+      <h2 class="rv d1" style="font-size:clamp(2rem,3.6vw,3.1rem);color:var(--green-deep);margin-bottom:22px" data-en="A leading professional community." data-ar="مجتمعٌ مهنيٌّ رائد.">A leading professional community.</h2>
+      <p class="lead-line rv d1" data-en="The Saudi PMO Community is one of the initiatives of the Project Management Association, supporting and empowering everyone interested in project management and PMOs across all sectors." data-ar="مجتمع مكاتب إدارة المشاريع السعودي إحدى مبادرات جمعية إدارة المشاريع، ويهدف إلى دعم وتمكين المهتمين بإدارة المشاريع ومكاتب إدارة المشاريع في مختلف القطاعات.">The Saudi PMO Community is one of the initiatives of the Project Management Association, supporting and empowering everyone interested in project management and PMOs across all sectors.</p>
+      <p class="rv d2" data-en="The community brings specialists, practitioners and students together in an interactive space to exchange knowledge and experience, develop skills, share modern practices, and build professional relationships that advance PMOs across the Kingdom." data-ar="يجمع المجتمع المختصين والممارسين والطلاب في مساحة تفاعلية لتبادل المعرفة والخبرات، وتطوير المهارات، ومشاركة الممارسات الحديثة، وبناء علاقات مهنية تسهم في تطور مكاتب إدارة المشاريع في المملكة.">The community brings specialists, practitioners and students together in an interactive space to exchange knowledge and experience, develop skills, share modern practices, and build professional relationships that advance PMOs across the Kingdom.</p>
+      <p class="rv d2" data-en="<strong>Our vision:</strong> to be the leading professional community for PMO practitioners in the Kingdom of Saudi Arabia — helping empower national talent, advance organisational excellence, and support the goals of Saudi Vision 2030 through modern PMO practice." data-ar="<strong>رؤيتنا:</strong> أن يكون المجتمع المهني الرائد لممارسي مكاتب إدارة المشاريع في المملكة العربية السعودية، والمساهمة في تمكين الكفاءات الوطنية وتعزيز التميز المؤسسي ودعم مستهدفات رؤية السعودية 2030 من خلال ممارسات PMO الحديثة."><strong>Our vision:</strong> to be the leading professional community for PMO practitioners in the Kingdom of Saudi Arabia — helping empower national talent, advance organisational excellence, and support the goals of Saudi Vision 2030 through modern PMO practice.</p>
+      <p class="rv d3" data-en="<strong>Our mission:</strong> to help build an effective professional community that brings PMO specialists together — citizens and residents alike — developing capabilities, exchanging expertise, and promoting best practices that serve the needs of the Kingdom's labour market." data-ar="<strong>رسالتنا:</strong> المساهمة في بناء مجتمع مهني فعّال يجمع المختصين في مكاتب إدارة المشاريع، مواطنين ومقيمين، ويسهم في تطوير القدرات وتبادل الخبرات وتعزيز أفضل الممارسات بما يخدم احتياجات سوق العمل في المملكة."><strong>Our mission:</strong> to help build an effective professional community that brings PMO specialists together — citizens and residents alike — developing capabilities, exchanging expertise, and promoting best practices that serve the needs of the Kingdom's labour market.</p>
+      <p class="rv d3" style="margin-bottom:10px" data-en="<strong>Our strategic goals:</strong>" data-ar="<strong>أهدافنا الاستراتيجية:</strong>"><strong>Our strategic goals:</strong></p>
       <div class="chips rv d3">
-        <span class="chip" data-en="Professional initiative" data-ar="مبادرة مهنية">Professional initiative</span>
-        <span class="chip" data-en="Knowledge-driven" data-ar="معرفية">Knowledge-driven</span>
-        <span class="chip" data-en="Open to all enthusiasts" data-ar="شاملة لجميع المهتمين">Open to all enthusiasts</span>
-        <span class="chip" data-en="Across all sectors" data-ar="في مختلف القطاعات">Across all sectors</span>
+        <span class="chip" data-en="1 · Build a professional community" data-ar="أولًا: بناء مجتمع مهني">1 · Build a professional community</span>
+        <span class="chip" data-en="2 · Spread knowledge" data-ar="ثانيًا: نشر المعرفة">2 · Spread knowledge</span>
+        <span class="chip" data-en="3 · Develop skills" data-ar="ثالثًا: تطوير المهارات">3 · Develop skills</span>
       </div>
     </div>
     <div class="about-media rv d2">
@@ -662,6 +670,7 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
         <h4 data-en="Community" data-ar="المجتمع">Community</h4>
         <a href="#join" data-en="Become a member" data-ar="كن عضوًا">Become a member</a>
         <a href="brand.html" data-en="Brand identity" data-ar="الهوية البصرية">Brand identity</a>
+        <a href="sponsors.html" data-en="Sponsors" data-ar="الرعاة">Sponsors</a>
       </div>
       <div class="foot-col">
         <h4 data-en="Get in touch" data-ar="تواصل معنا">Get in touch</h4>
@@ -674,6 +683,7 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
       </div>
     </div>
     <div class="foot-bottom">
+      <div class="affil-line"><img id="affilLogoFoot" alt="جمعية إدارة المشاريع" hidden><span data-en="The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association" data-ar="مجتمع مكاتب إدارة المشاريع السعودي مبادرة معتمدة تحت مظلة جمعية إدارة المشاريع">The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association</span></div>
       <p data-en="© 2026 Saudi PMO Community. Built in Riyadh. Brand Guidelines V1.1." data-ar="© 2026 مجتمع مكاتب إدارة المشاريع السعودي. صُنع في الرياض. دليل الهوية V1.1.">© 2026 Saudi PMO Community. Built in Riyadh. Brand Guidelines V1.1.</p>
       <p data-en="Rooted in Najd · Built for delivery" data-ar="متجذّرون في نجد · مبنيّون للتسليم">Rooted in Najd · Built for delivery</p>
     </div>

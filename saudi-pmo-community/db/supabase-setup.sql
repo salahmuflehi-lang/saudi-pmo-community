@@ -22,3 +22,14 @@ create policy "public can request to join"
   for insert
   to anon
   with check (true);
+
+-- Team access for the results page (results.html):
+-- 1) Run this policy once, 2) create a login in Authentication -> Users -> Add user.
+create policy "team can read requests"
+  on public.join_requests
+  for select
+  to authenticated
+  using (true);
+
+-- If the table was created before the phone field existed:
+alter table public.join_requests add column if not exists phone text;

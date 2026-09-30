@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>طلبات الانضمام — مجتمع مكاتب إدارة المشاريع السعودي</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1E3329">
+<link rel="icon" type="image/png" href="assets/t-icon-green.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2B4A3A; --green-deep:#1E3329; --gold:#C49A60; --gold-deep:#A87E47;
+  --sand:#D8B98A; --cream:#F1EADB; --paper:#FBF8F1; --ink:#1B1B18; --ink-soft:#4A4A44;
+  --line:rgba(43,74,58,.14); --ar:'Tajawal',sans-serif; --sans:'Alexandria',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--ar);background:var(--paper);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh}
+.top{background:var(--green-deep);color:var(--cream);padding:22px 0}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.top img{height:44px}
+.top h1{font-size:1.15rem;font-weight:800}
+a{color:inherit;text-decoration:none}
+.btn{font-family:var(--ar);border:none;cursor:pointer;border-radius:100px;padding:11px 22px;font-size:.9rem;font-weight:700;transition:.25s}
+.btn-gold{background:var(--gold);color:var(--green-deep)}
+.btn-gold:hover{background:var(--gold-deep);color:#fff}
+.btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--green)}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 18px 45px -28px rgba(43,74,58,.35)}
+.login{max-width:420px;margin:60px auto}
+.login h2{font-size:1.25rem;font-weight:800;color:var(--green-deep);margin-bottom:6px}
+.login p{font-size:.88rem;color:var(--ink-soft);margin-bottom:18px}
+.login input{width:100%;font-family:var(--ar);font-size:.95rem;padding:13px 15px;border:1.5px solid var(--line);border-radius:11px;margin-bottom:12px;background:var(--paper)}
+.login input:focus{outline:none;border-color:var(--gold)}
+.err{color:#a33;font-size:.85rem;margin:6px 0 0;display:none}
+.tools{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px 0 14px;flex-wrap:wrap}
+.tools .count{font-weight:800;color:var(--green-deep)}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:.88rem}
+th{background:var(--green-deep);color:var(--cream);padding:11px 12px;text-align:right;font-weight:700;white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:var(--paper)}
+td.ltr{direction:ltr;text-align:right;font-family:var(--sans);font-size:.82rem}
+.empty{padding:40px;text-align:center;color:var(--ink-soft)}
+#tableWrap{display:none;overflow-x:auto}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:14px">
+      <img src="assets/nav-ar-offwhite.png" alt="مجتمع مكاتب إدارة المشاريع السعودي">
+      <h1>طلبات الانضمام</h1>
+    </div>
+    <a class="btn btn-gold" href="index.html">الموقع الرئيسي</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="card login" id="loginBox">
+    <h2>دخول فريق المجتمع</h2>
+    <p>هذه الصفحة خاصة بإدارة المجتمع لعرض طلبات «انضم إلى المجتمع». الدخول بحساب مصرّح به فقط.</p>
+    <input type="email" id="em" placeholder="البريد الإلكتروني" autocomplete="username">
+    <input type="password" id="pw" placeholder="كلمة المرور" autocomplete="current-password">
+    <button class="btn btn-gold" style="width:100%" onclick="login()">دخول</button>
+    <p class="err" id="err"></p>
+  </div>
+
+  <div id="tableWrap">
+    <div class="tools">
+      <span class="count" id="count"></span>
+      <div style="display:flex;gap:10px">
+        <button class="btn btn-ghost" onclick="loadRows()">تحديث</button>
+        <button class="btn btn-gold" onclick="exportCsv()">تصدير CSV</button>
+      </div>
+    </div>
+    <table>
+      <thead><tr><th>التاريخ</th><th>الاسم</th><th>البريد</th><th>الجوال</th><th>جهة العمل</th><th>فئة العضوية</th><th>اللغة</th></tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+    <div class="empty" id="empty" style="display:none">لا توجد طلبات بعد.</div>
+  </div>
+
+</div>
+
+<script>
+const DB = {
+  url: "https://qbdixiazgtzlkcxppgyo.supabase.co",
+  anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFiZGl4aWF6Z3R6bGtjeHBwZ3lvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM0MDA5NjYsImV4cCI6MjA5ODk3Njk2Nn0.9D4fpZDkXCQUIrDaAbbJfiCM-iPI9VlznQF39ftGfqA"
+};
+let TOKEN = sessionStorage.getItem('spmoc-admin-token') || null;
+let ROWS = [];
+
+async function login(){
+  const err = document.getElementById('err');
+  err.style.display = 'none';
+  try{
+    const r = await fetch(DB.url + '/auth/v1/token?grant_type=password', {
+      method: 'POST',
+      headers: { 'apikey': DB.anonKey, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: em.value.trim(), password: pw.value })
+    });
+    const j = await r.json();
+    if(!r.ok || !j.access_token) throw new Error(j.error_description || j.msg || 'فشل الدخول');
+    TOKEN = j.access_token;
+    try{ sessionStorage.setItem('spmoc-admin-token', TOKEN); }catch(e){}
+    await loadRows();
+  }catch(e){
+    err.textContent = /invalid/i.test(e.message) ? 'بيانات الدخول غير صحيحة.' :
+      ('تعذّر الدخول — ' + (e.message === 'Failed to fetch' ? 'قاعدة البيانات غير متاحة (قد تكون موقوفة مؤقتًا).' : e.message));
+    err.style.display = 'block';
+  }
+}
+
+async function loadRows(){
+  const r = await fetch(DB.url + '/rest/v1/join_requests?select=*&order=created_at.desc', {
+    headers: { 'apikey': DB.anonKey, 'Authorization': 'Bearer ' + TOKEN }
+  });
+  if(r.status === 401){ sessionStorage.removeItem('spmoc-admin-token'); TOKEN=null; return; }
+  ROWS = await r.json();
+  if(!Array.isArray(ROWS)) ROWS = [];
+  document.getElementById('loginBox').style.display = 'none';
+  document.getElementById('tableWrap').style.display = 'block';
+  document.getElementById('count').textContent = 'عدد الطلبات: ' + ROWS.length;
+  const tb = document.getElementById('tb');
+  tb.innerHTML = ROWS.map(x => '<tr>'+
+    '<td class="ltr">'+ (x.created_at||'').slice(0,16).replace('T',' ') +'</td>'+
+    '<td>'+ esc(x.full_name) +'</td>'+
+    '<td class="ltr">'+ esc(x.email) +'</td>'+
+    '<td class="ltr">'+ esc(x.phone||'') +'</td>'+
+    '<td>'+ esc(x.organization||'') +'</td>'+
+    '<td>'+ esc(x.role||'') +'</td>'+
+    '<td class="ltr">'+ esc(x.lang||'') +'</td>'+
+  '</tr>').join('');
+  document.getElementById('empty').style.display = ROWS.length ? 'none' : 'block';
+}
+
+function esc(s){ return String(s??'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function exportCsv(){
+  const head = ['created_at','full_name','email','phone','organization','role','lang'];
+  const lines = [head.join(',')].concat(ROWS.map(x => head.map(k => '"'+String(x[k]??'').replace(/"/g,'""')+'"').join(',')));
+  const blob = new Blob(["﻿" + lines.join("\r\n")], {type: 'text/csv;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'join_requests.csv';
+  a.click();
+}
+
+if(TOKEN) loadRows();
+</script>
+</body>
+</html>
