@@ -306,6 +306,13 @@ html.night .founder .ltitle{color:var(--gold)}
 .form-ok.show{display:block}
 .form-ok b{color:var(--gold);display:block;margin-bottom:4px}
 
+/* ---------- SPONSORS ---------- */
+.sponsor-card{max-width:520px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:38px 30px;text-align:center;box-shadow:0 24px 55px -30px rgba(43,74,58,.35)}
+.sponsor-card img{max-width:250px;width:100%;margin:0 auto 18px}
+.sponsor-card .sname{font-weight:600;font-size:1.25rem;color:var(--green-deep)}
+.sponsor-card .sen{font-family:var(--sans);font-size:.85rem;color:var(--gold-deep);margin-top:3px;direction:ltr}
+.sponsor-card .stier{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.06em;color:var(--gold-deep);border:1px solid rgba(196,154,96,.5);border-radius:100px;padding:4px 14px;margin-bottom:16px;background:rgba(196,154,96,.08)}
+
 /* ---------- FOOTER ---------- */
 .footer{background:var(--green-deep);color:var(--cream);padding:70px 0 30px}
 .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid var(--line-d)}
@@ -650,6 +657,23 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
   </div>
 </section>
 
+<!-- ============ SPONSORS ============ -->
+<section class="sec" id="sponsors" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow" style="justify-content:center" data-en="Success partners" data-ar="شركاء النجاح">Success partners</span>
+      <h2 data-en="Community sponsorship." data-ar="الرعاية.">Community sponsorship.</h2>
+      <p data-en="We thank our sponsors who believe in the community&#39;s mission and help empower PMO practitioners across the Kingdom." data-ar="نشكر رعاتنا الذين يؤمنون برسالة المجتمع ويسهمون في تمكين ممارسي مكاتب إدارة المشاريع في المملكة.">We thank our sponsors who believe in the community&#39;s mission and help empower PMO practitioners across the Kingdom.</p>
+    </div>
+    <div class="sponsor-card rv d1">
+      <span class="stier" data-en="Community sponsor" data-ar="راعي المجتمع">Community sponsor</span>
+      <img loading="lazy" src="assets/sponsor-mabani.png" alt="شركة مباني الجزيرة — MABANI Design &amp; Build">
+      <div class="sname" data-en="Mabani Al-Jazeera Company" data-ar="شركة مباني الجزيرة">Mabani Al-Jazeera Company</div>
+      <div class="sen">MABANI — Design &amp; Build</div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="wrap">
@@ -669,8 +693,7 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
       <div class="foot-col">
         <h4 data-en="Community" data-ar="المجتمع">Community</h4>
         <a href="#join" data-en="Become a member" data-ar="كن عضوًا">Become a member</a>
-        <a href="brand.html" data-en="Brand identity" data-ar="الهوية البصرية">Brand identity</a>
-        <a href="sponsors.html" data-en="Sponsors" data-ar="الرعاة">Sponsors</a>
+        <a href="#sponsors" data-en="Sponsorship" data-ar="الرعاية">Sponsorship</a>
       </div>
       <div class="foot-col">
         <h4 data-en="Get in touch" data-ar="تواصل معنا">Get in touch</h4>
