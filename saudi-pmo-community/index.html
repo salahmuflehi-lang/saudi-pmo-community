@@ -157,6 +157,14 @@ html[dir="rtl"] .hero-logo .lock{background-image:url(assets/hero-ar-offwhite.pn
 .marquee span::after{content:"◈";color:var(--gold);font-size:.7rem}
 @keyframes scrollx{to{transform:translateX(-50%)}}
 
+/* ---------- UPCOMING EVENT ---------- */
+.event-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+.event-grid .poster{border-radius:22px;width:100%;box-shadow:0 30px 70px -30px rgba(43,74,58,.5)}
+.event-frame{width:100%;height:620px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.event-cta{margin-top:16px;text-align:center}
+html.night .event-frame{border-color:rgba(241,234,219,.15)}
+@media(max-width:860px){.event-grid{grid-template-columns:1fr}.event-frame{height:560px}}
+
 /* ---------- SECTION SCAFFOLD ---------- */
 .sec{padding:120px 0}
 .sec-head{max-width:640px;margin-bottom:60px}
@@ -479,6 +487,24 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
     <span data-en="AI in Project Management" data-ar="الذكاء الاصطناعي في إدارة المشاريع">AI in Project Management</span>
   </div>
 </div>
+
+<!-- ============ UPCOMING EVENT ============ -->
+<section class="sec" id="event">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <span class="eyebrow" style="justify-content:center" data-en="Upcoming event" data-ar="فعالية قادمة">Upcoming event</span>
+      <h2 data-en="Sabtiyah Podcast — Jeddah." data-ar="بودكاست سبتية — جدة.">Sabtiyah Podcast — Jeddah.</h2>
+      <p data-en="Reserve your seat — registration takes a minute, right here." data-ar="احجز مقعدك — التسجيل لا يستغرق دقيقة، من هنا مباشرة.">Reserve your seat — registration takes a minute, right here.</p>
+    </div>
+    <div class="event-grid rv d1">
+      <img class="poster" loading="lazy" src="assets/event-sabtiyah.webp" alt="بودكاست سبتية — جدة">
+      <div>
+        <iframe class="event-frame" loading="lazy" src="https://liqa.io/embed/sabtiyah_ep01" title="التسجيل في فعالية سبتية" allow="payment"></iframe>
+        <div class="event-cta"><a class="btn btn-gold" href="https://liqa.io/embed/sabtiyah_ep01" target="_blank" rel="noopener" data-en="Open registration page" data-ar="فتح صفحة التسجيل">Open registration page</a></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ ABOUT ============ -->
 <section class="sec about" id="about">
