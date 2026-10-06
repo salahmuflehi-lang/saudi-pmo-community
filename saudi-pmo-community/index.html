@@ -145,7 +145,10 @@ html[dir="rtl"] .hero-logo .lock{background-image:url(assets/hero-ar-offwhite.pn
 /* ---------- AFFILIATION BAR ---------- */
 .affil-bar{position:absolute;top:88px;left:0;right:0;z-index:3;text-align:center;padding:0 16px}
 .affil-bar span{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border:1px solid rgba(196,154,96,.4);border-radius:100px;background:rgba(30,51,41,.4);backdrop-filter:blur(6px);color:var(--sand);font-size:.78rem;font-weight:400;line-height:1.5}
-.affil-bar img,.affil-line img{height:26px;width:auto}
+.affil-bar img,.affil-line img{height:30px;width:auto;background:#fff;border-radius:7px;padding:2px 5px}
+.affil-bar a,.affil-line a{text-decoration:none;color:inherit;transition:.3s var(--ease)}
+.affil-bar a:hover span{border-color:var(--gold);background:rgba(196,154,96,.22)}
+.affil-line a:hover{color:var(--gold)}
 .affil-bar img[hidden],.affil-line img[hidden]{display:none}
 .affil-line{flex-basis:100%;display:flex;justify-content:center;align-items:center;gap:10px;text-align:center;color:rgba(241,234,219,.8);font-size:.86rem;padding-bottom:14px;border-bottom:1px solid var(--line-d);margin-bottom:12px}
 @media(max-width:560px){.affil-bar{top:76px}.affil-bar span{font-size:.68rem;padding:6px 12px}}
@@ -315,7 +318,8 @@ html.night .founder .ltitle{color:var(--gold)}
 .form-ok b{color:var(--gold);display:block;margin-bottom:4px}
 
 /* ---------- SPONSORS ---------- */
-.sponsor-card{max-width:520px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:38px 30px;text-align:center;box-shadow:0 24px 55px -30px rgba(43,74,58,.35)}
+.sponsor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;max-width:920px;margin:0 auto}
+.sponsor-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:38px 30px;text-align:center;box-shadow:0 24px 55px -30px rgba(43,74,58,.35)}
 .sponsor-card a{display:block;cursor:pointer}
 .sponsor-card img{max-width:250px;width:100%;margin:0 auto 18px}
 .sponsor-card .sname{font-weight:600;font-size:1.25rem;color:var(--green-deep)}
@@ -454,7 +458,7 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
   <canvas id="net"></canvas>
-  <div class="affil-bar"><span><img id="affilLogoTop" alt="جمعية إدارة المشاريع" hidden><b style="font-weight:400" data-en="The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association" data-ar="مجتمع مكاتب إدارة المشاريع السعودي مبادرة معتمدة تحت مظلة جمعية إدارة المشاريع">The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association</b></span></div>
+  <div class="affil-bar"><a href="https://pma.sa/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9" target="_blank" rel="noopener"><span><img src="assets/pma-logo.webp" alt="جمعية إدارة المشاريع"><b style="font-weight:400" data-en="The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association" data-ar="مجتمع مكاتب إدارة المشاريع السعودي مبادرة معتمدة تحت مظلة جمعية إدارة المشاريع">The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association</b></span></a></div>
   <div class="hero-glow g1"></div>
   <div class="hero-glow g2"></div>
   <div class="wrap">
@@ -692,11 +696,19 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
       <h2 data-en="Official sponsor." data-ar="الراعي الرسمي.">Official sponsor.</h2>
       <p data-en="We thank our sponsors who believe in the community&#39;s mission and help empower PMO practitioners across the Kingdom." data-ar="نشكر رعاتنا الذين يؤمنون برسالة المجتمع ويسهمون في تمكين ممارسي مكاتب إدارة المشاريع في المملكة.">We thank our sponsors who believe in the community&#39;s mission and help empower PMO practitioners across the Kingdom.</p>
     </div>
+    <div class="sponsor-grid">
     <div class="sponsor-card rv d1">
       <span class="stier" data-en="Community sponsor" data-ar="راعي المجتمع">Community sponsor</span>
       <a href="https://mabani.com.sa/" target="_blank" rel="noopener" aria-label="MABANI — mabani.com.sa"><img loading="lazy" src="assets/sponsor-mabani.png" alt="شركة مباني الجزيرة — MABANI Design &amp; Build"></a>
       <div class="sname" data-en="Mabani Al-Jazeera Company" data-ar="شركة مباني الجزيرة">Mabani Al-Jazeera Company</div>
       <div class="sen">MABANI — Design &amp; Build</div>
+    </div>
+    <div class="sponsor-card rv d2">
+      <span class="stier" data-en="Accrediting body &amp; sponsor" data-ar="الجهة المظلّة والراعي">Accrediting body &amp; sponsor</span>
+      <a href="https://pma.sa/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9" target="_blank" rel="noopener" aria-label="Project Management Association — pma.sa"><img loading="lazy" src="assets/pma-logo.webp" alt="جمعية إدارة المشاريع — Project Management Association" style="background:#fff"></a>
+      <div class="sname" data-en="Project Management Association" data-ar="جمعية إدارة المشاريع">Project Management Association</div>
+      <div class="sen">pma.sa</div>
+    </div>
     </div>
   </div>
 </section>
@@ -734,7 +746,7 @@ html.night .nav.scrolled .burger span{background:#f1eadb}
       </div>
     </div>
     <div class="foot-bottom">
-      <div class="affil-line"><img id="affilLogoFoot" alt="جمعية إدارة المشاريع" hidden><span data-en="The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association" data-ar="مجتمع مكاتب إدارة المشاريع السعودي مبادرة معتمدة تحت مظلة جمعية إدارة المشاريع">The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association</span></div>
+      <div class="affil-line"><a href="https://pma.sa/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;color:inherit"><img src="assets/pma-logo.webp" alt="جمعية إدارة المشاريع"><span data-en="The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association" data-ar="مجتمع مكاتب إدارة المشاريع السعودي مبادرة معتمدة تحت مظلة جمعية إدارة المشاريع">The Saudi PMO Community is an accredited initiative under the umbrella of the Project Management Association</span></a></div>
       <p data-en="© 2026 Saudi PMO Community. Built in Riyadh. Brand Guidelines V1.1." data-ar="© 2026 مجتمع مكاتب إدارة المشاريع السعودي. صُنع في الرياض. دليل الهوية V1.1.">© 2026 Saudi PMO Community. Built in Riyadh. Brand Guidelines V1.1.</p>
       <p data-en="Rooted in Najd · Built for delivery" data-ar="متجذّرون في نجد · مبنيّون للتسليم">Rooted in Najd · Built for delivery</p>
     </div>
